@@ -1,8 +1,9 @@
 ---
-path: /test
+path: /blog/test
 date: 2020-01-26T04:40:57.521Z
 title: Testing
 ---
+
 ## ...1,2,3
 
 ```javascript
@@ -101,10 +102,9 @@ const swap = (arr, i, j) => {
     arr[j] = temp
 }
 
-console.log('bubblesort\n', bubbleSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log('selectionsort\n', selectionSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log('insertionsort\n', insertionSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log('quicksort\n', quickSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log('mergesort\n', mergeSort([3, 2, 1, 5, 4, 6, 7]).toString())
-
+console.log("bubblesort\n", bubbleSort([3, 2, 1, 5, 4, 6, 7]).toString())
+console.log("selectionsort\n", selectionSort([3, 2, 1, 5, 4, 6, 7]).toString())
+console.log("insertionsort\n", insertionSort([3, 2, 1, 5, 4, 6, 7]).toString())
+console.log("quicksort\n", quickSort([3, 2, 1, 5, 4, 6, 7]).toString())
+console.log("mergesort\n", mergeSort([3, 2, 1, 5, 4, 6, 7]).toString())
 ```
