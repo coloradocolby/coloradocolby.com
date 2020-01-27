@@ -4,23 +4,22 @@ import validator from "validator"
 import Head from "../components/head"
 import Layout from "../components/layout"
 
-import {
-    FaUser,
-    FaEnvelope,
-    FaExclamationTriangle,
-} from "react-icons/fa"
+import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
 import contactStyles from "./contact.module.scss"
 
-
 function encode(data) {
-  const formData = new FormData()
+    console.log("data", data)
+    const formData = new FormData()
 
-  for (const key of Object.keys(data)) {
-    formData.append(key, data[key])
-  }
+    for (const key of Object.keys(data)) {
+        console.log(key, data[key])
+        formData.append(key, data[key])
+        console.log("fd", formData)
+    }
 
-  return formData
+    console.log("returning formData", formData)
+    return formData
 }
 
 class ContactPage extends Component {
@@ -35,6 +34,9 @@ class ContactPage extends Component {
         }
     }
 
+    /**
+     * https://docs.netlify.com/forms/setup/#submit-forms-via-ajax
+     */
     handleSubmit = e => {
         e.preventDefault()
         const form = e.target
@@ -45,7 +47,7 @@ class ContactPage extends Component {
                 ...this.state,
             }),
         })
-			.then(() => console.log('submit success'))
+            .then(() => console.log("submit success"))
             .catch(error => alert(error))
     }
 
@@ -117,7 +119,7 @@ class ContactPage extends Component {
                         name="contactme"
                         method="POST"
                         data-netlify="true"
-						data-netlify-honeypot="bot-field"
+                        data-netlify-honeypot="bot-field"
                         onSubmit={this.handleSubmit}
                         className={contactStyles.form}
                     >
@@ -143,6 +145,7 @@ class ContactPage extends Component {
                                     <div className="control is-expanded has-icons-left">
                                         <input
                                             id="name"
+                                            name="name"
                                             className="input"
                                             type="text"
                                             onChange={this.handleChange}
@@ -158,6 +161,7 @@ class ContactPage extends Component {
                                     <div className="control is-expanded has-icons-left has-icons-right">
                                         <input
                                             id="email"
+                                            name="email"
                                             className={`input ${!validEmail &&
                                                 "is-danger"}`}
                                             type="email"
@@ -191,6 +195,7 @@ class ContactPage extends Component {
                             <div className="control">
                                 <textarea
                                     id="message"
+                                    name="message"
                                     className="textarea"
                                     onChange={this.handleChange}
                                     value={message}
