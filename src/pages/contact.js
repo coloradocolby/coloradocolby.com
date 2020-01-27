@@ -97,7 +97,7 @@ class ContactPage extends Component {
                     <form
 						name="contact"
 						method="POST"
-                        netlify
+                        data-netlify="true"
                         className={contactStyles.form}
                     >
                         <div className="field is-horizontal">
@@ -167,6 +167,7 @@ class ContactPage extends Component {
                                     className={`button is-primary ${validForm &&
                                         contactStyles.enabledButton}`}
                                     disabled={!validForm}
+									type="submit"
                                 >
                                     submit
                                 </button>
