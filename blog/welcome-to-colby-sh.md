@@ -1,7 +1,7 @@
 ---
 path: /blog/welcome
 date: 2020-01-27T07:00:35.675Z
-title: Welcome to colby.sh
+title: About Me
 ---
 ```javascript
 const me = {
