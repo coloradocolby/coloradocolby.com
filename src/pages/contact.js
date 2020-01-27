@@ -67,13 +67,16 @@ class ContactPage extends Component {
 
                     <form
                         method="POST"
-                        name="contact-form"
                         data-netlify="true"
                         data-netlify-honeypot="honeypot-field"
                         className={styles.form}
                     >
                         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                        {/* <input type="hidden" name="form-name" value="contact" /> */}
+                        <input
+                            type="hidden"
+                            name="form-name"
+                            value="contact-form"
+                        />
                         {/* This field is used by netlify as a honeypot for extra security
 							https://docs.netlify.com/forms/spam-filters/#honeypot-field	*/}
                         <div hidden>

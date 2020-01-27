@@ -22,7 +22,6 @@ export default class ProjectsPage extends Component {
             }
         )
         repos = await repos.json()
-        console.log(repos)
         this.setState({
             repos,
         })
