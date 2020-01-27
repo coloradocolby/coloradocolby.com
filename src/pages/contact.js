@@ -65,13 +65,19 @@ class ContactPage extends Component {
                         on twitter or fill out the form below
                     </p>
 
+                    {/* Helpful
+                        https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
                     <form
+                        name="contact-form"
                         method="POST"
                         data-netlify="true"
-                        data-netlify-honeypot="honeypot-field"
+                        data-netlify-honeypot="bot-field"
                         className={styles.form}
                     >
-                        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                        {/* The `form-name` hidden field is required to support form submissions without JavaScript 
+                            Gatsby strips out input fields that are not included in the JSX form, so you will still need 
+                            to add the form-name hidden input field
+                            https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/#step-2 */}
                         <input
                             type="hidden"
                             name="form-name"
@@ -82,7 +88,7 @@ class ContactPage extends Component {
                         <div hidden>
                             <label>
                                 only a bot would fill this out:{" "}
-                                <input name="honeypot-field" />
+                                <input name="bot-field" />
                             </label>
                         </div>
                         <div className="field is-horizontal">

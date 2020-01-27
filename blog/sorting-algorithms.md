@@ -101,9 +101,10 @@ const swap = (arr, i, j) => {
     arr[j] = temp
 }
 
-console.log("bubblesort\n", bubbleSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log("selectionsort\n", selectionSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log("insertionsort\n", insertionSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log("quicksort\n", quickSort([3, 2, 1, 5, 4, 6, 7]).toString())
-console.log("mergesort\n", mergeSort([3, 2, 1, 5, 4, 6, 7]).toString())
+let { log } = console
+log("bubblesort\n", bubbleSort([3, 2, 1, 5, 4, 6, 7]))
+log("selectionsort\n", selectionSort([3, 2, 1, 5, 4, 6, 7]))
+log("insertionsort\n", insertionSort([3, 2, 1, 5, 4, 6, 7]))
+log("quicksort\n", quickSort([3, 2, 1, 5, 4, 6, 7]))
+log("mergesort\n", mergeSort([3, 2, 1, 5, 4, 6, 7]))
 ```

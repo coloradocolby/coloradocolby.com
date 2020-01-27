@@ -26,7 +26,7 @@ const IndexPage = () => {
                     a software engineer in seattle
                 </h2>
                 <h4 className="is-size-4">
-                    need a developer? <Link to="/contact">hmu</Link>
+                    have an idea? <Link to="/contact">hmu</Link>
                 </h4>
             </Layout>
         </>

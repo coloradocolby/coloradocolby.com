@@ -25,6 +25,10 @@ $control-border-width: 2px;
 
 @import "spacing-helpers";
 
+pre {
+    box-shadow: $box-shadow;
+    border-radius: 10px;
+}
 // bulma overrides
 .number {
     all: unset;
