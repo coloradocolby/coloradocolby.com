@@ -23,10 +23,19 @@ class ContactPage extends Component {
     handleChange = e => {
         this.setState(
             {
-                [e.target.id]: e.target.value,
+                [e.target.name]: e.target.value,
             },
             this.validateForm
         )
+    }
+
+    validateEmail = () => {
+        const { email } = this.state
+        if (email.length > 0) {
+            this.setState({
+                validEmail: validator.isEmail(email),
+            })
+        }
     }
 
     validateForm = () => {
@@ -39,19 +48,6 @@ class ContactPage extends Component {
         })
     }
 
-    validateEmail = () => {
-        const { email } = this.state
-        if (email.length > 0) {
-            this.setState({
-                validEmail: validator.isEmail(email),
-            })
-        }
-    }
-
-    removeNotification = () => {
-        this.setState({ showNotification: false })
-    }
-
     render() {
         const { name, email, message, validForm, validEmail } = this.state
 
@@ -60,23 +56,6 @@ class ContactPage extends Component {
                 <Head title="Contact" />
                 <Layout>
                     <h1 className="title is-1">dm sliding</h1>
-
-                    {/* 
-          revisit this twitter dm widget button when you can figure out a good
-          way to tell when the button has loaded, otherwise you see the jumpiness of it
-          defaulting to @coloradocolby and then turning into the loaded button widget
-          NOTE: you will need to uncomment out the twitter script in gatsby-ssr.js
-          */}
-                    {/* <p className="m-b-md">
-            <a
-              href="https://twitter.com/messages/compose?recipient_id=4227576672"
-              className="twitter-dm-button is-lowercase m-r-sm"
-              data-screen-name="@coloradocolby"
-            >
-              @coloradocolby
-            </a>{" "}
-            on twitter or fill out the form below
-          </p> */}
                     <p className="m-b-md">
                         <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
                             @coloradocolby
@@ -86,19 +65,18 @@ class ContactPage extends Component {
 
                     <form
                         method="POST"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
+                        netlify
+                        data-netlify-honeypot="honeypot-field"
                         className={contactStyles.form}
                     >
                         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                         <input type="hidden" name="form-name" value="contact" />
+                        {/* This field is used by netlify as a honeypot for extra security
+							https://docs.netlify.com/forms/spam-filters/#honeypot-field	*/}
                         <div hidden>
                             <label>
-                                Don’t fill this out:{" "}
-                                <input
-                                    name="bot-field"
-                                    onChange={this.handleChange}
-                                />
+                                only a bot would fill this out:{" "}
+                                <input name="honeypot-field" />
                             </label>
                         </div>
                         <div className="field is-horizontal">
@@ -107,12 +85,11 @@ class ContactPage extends Component {
                                     <label className="label">name</label>
                                     <div className="control is-expanded has-icons-left">
                                         <input
-                                            id="name"
-                                            name="name"
                                             className="input"
                                             type="text"
-                                            onChange={this.handleChange}
+                                            name="name"
                                             value={name}
+                                            onChange={this.handleChange}
                                         />
                                         <span className="icon is-small is-left">
                                             <FaUser />
@@ -123,14 +100,13 @@ class ContactPage extends Component {
                                     <label className="label">email</label>
                                     <div className="control is-expanded has-icons-left has-icons-right">
                                         <input
-                                            id="email"
-                                            name="email"
                                             className={`input ${!validEmail &&
                                                 "is-danger"}`}
                                             type="email"
+                                            name="email"
+                                            value={email}
                                             onChange={this.handleChange}
                                             onBlur={this.validateEmail}
-                                            value={email}
                                         />
                                         <span className="icon is-small is-left">
                                             <FaEnvelope />
@@ -157,18 +133,18 @@ class ContactPage extends Component {
                             <label className="label">message</label>
                             <div className="control">
                                 <textarea
-                                    id="message"
-                                    name="message"
                                     className="textarea"
-                                    onChange={this.handleChange}
+                                    type="text"
+                                    name="message"
                                     value={message}
+                                    onChange={this.handleChange}
                                 ></textarea>
                             </div>
                         </div>
                         <div className="field">
                             <div className="control">
                                 <button
-                                    className={`button is-primary ${validForm &&
+                                    className={`button is-primary is-small ${validForm &&
                                         contactStyles.enabledButton}`}
                                     disabled={!validForm}
                                     type="submit"

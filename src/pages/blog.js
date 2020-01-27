@@ -1,9 +1,9 @@
 import React from "react"
-import Layout from "../components/layout"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import blogStyles from "./blog.module.scss"
 
+import Layout from "../components/layout"
 import Head from "../components/head"
+import BlogCard from "../components/blog-card"
 
 const BlogPage = () => {
     const data = useStaticQuery(graphql`
@@ -33,22 +33,10 @@ const BlogPage = () => {
                             to={`${edge.node.frontmatter.path}`}
                             key={edge.node.frontmatter.path}
                         >
-                            <div
-                                className={`${blogStyles.blogCard} card m-b-md`}
-                            >
-                                <div className="card-content">
-                                    <div className="media">
-                                        <div className="media-content">
-                                            <p className="title is-4">
-                                                {edge.node.frontmatter.title}
-                                            </p>
-                                            <p className="subtitle is-6">
-                                                {edge.node.frontmatter.date}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <BlogCard
+                                title={edge.node.frontmatter.title}
+                                date={edge.node.frontmatter.date}
+                            ></BlogCard>
                         </Link>
                     )
                 })}

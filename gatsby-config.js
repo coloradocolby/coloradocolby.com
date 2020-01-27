@@ -7,8 +7,8 @@
 module.exports = {
     /* Your site config here */
     siteMetadata: {
-        title: "colby.sh",
-        site: "colby.sh",
+        title: "colby.🤫",
+        site: "colby.🤫",
         author: "colby",
     },
     plugins: [
