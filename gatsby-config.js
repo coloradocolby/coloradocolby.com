@@ -5,6 +5,12 @@
  */
 
 module.exports = {
+    /* Your site config here */
+    siteMetadata: {
+        title: "colby.sh",
+        site: "colby.sh",
+        author: "colby",
+    },
     plugins: [
         `gatsby-plugin-netlify-cms`,
         {

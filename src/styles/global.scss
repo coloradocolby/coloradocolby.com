@@ -25,5 +25,9 @@ $input-shadow: none;
 
 @import "~bulma";
 
+@import "spacing-helpers";
+
 // bulma overrides
-.number {all: unset;}
+.number {
+    all: unset;
+}

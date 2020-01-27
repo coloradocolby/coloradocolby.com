@@ -36,8 +36,8 @@ const selectionSort = arr => {
     }
     return arr
 }
-/*** INSERTION SORT ***/
 
+/*** INSERTION SORT ***/
 const insertionSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         let j = i
@@ -79,6 +79,7 @@ const quickSortHelper = (arr, start, end) => {
     quickSortHelper(arr, right + 1, end)
 }
 
+/*** MERGE SORT ***/
 const mergeSort = arr => {
     if (arr.length <= 1) return arr
     const mid = Math.floor(arr.length / 2)
