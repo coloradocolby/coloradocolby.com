@@ -37,3 +37,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         })
     })
 }
+
+// https://www.gatsbyjs.org/packages/gatsby-remark-relative-images/#to-convert-frontmatter-images
+// gatsby-node.js
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
+
+exports.onCreateNode = ({ node }) => {
+    fmImagesToRelative(node)
+}
