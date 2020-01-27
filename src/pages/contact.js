@@ -8,10 +8,20 @@ import {
     FaUser,
     FaEnvelope,
     FaExclamationTriangle,
-    FaCheck,
 } from "react-icons/fa"
 
 import contactStyles from "./contact.module.scss"
+
+
+function encode(data) {
+  const formData = new FormData()
+
+  for (const key of Object.keys(data)) {
+    formData.append(key, data[key])
+  }
+
+  return formData
+}
 
 class ContactPage extends Component {
     constructor(props) {
@@ -23,6 +33,20 @@ class ContactPage extends Component {
             validForm: false,
             validEmail: true,
         }
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const form = e.target
+        fetch("/", {
+            method: "POST",
+            body: encode({
+                "form-name": form.getAttribute("name"),
+                ...this.state,
+            }),
+        })
+			.then(() => console.log('submit success'))
+            .catch(error => alert(error))
     }
 
     handleChange = e => {
@@ -51,11 +75,6 @@ class ContactPage extends Component {
                 validEmail: validator.isEmail(email),
             })
         }
-    }
-
-    handleSubmit = e => {
-        e.preventDefault()
-        console.log("handle submit")
     }
 
     removeNotification = () => {
@@ -95,11 +114,28 @@ class ContactPage extends Component {
                     </p>
 
                     <form
-						name="contact"
-						method="POST"
+                        name="contactme"
+                        method="POST"
                         data-netlify="true"
+						data-netlify-honeypot="bot-field"
+                        onSubmit={this.handleSubmit}
                         className={contactStyles.form}
                     >
+                        {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
+                        <input
+                            type="hidden"
+                            name="form-name"
+                            value="file-upload"
+                        />
+                        <div hidden>
+                            <label>
+                                Don’t fill this out:{" "}
+                                <input
+                                    name="bot-field"
+                                    onChange={this.handleChange}
+                                />
+                            </label>
+                        </div>
                         <div className="field is-horizontal">
                             <div className="field-body">
                                 <div className="field">
@@ -167,7 +203,7 @@ class ContactPage extends Component {
                                     className={`button is-primary ${validForm &&
                                         contactStyles.enabledButton}`}
                                     disabled={!validForm}
-									type="submit"
+                                    type="submit"
                                 >
                                     submit
                                 </button>
