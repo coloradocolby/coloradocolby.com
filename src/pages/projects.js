@@ -32,7 +32,7 @@ export default class ProjectsPage extends Component {
             <>
                 <Head title="Projects" />
                 <Layout>
-                    <h1 className="title is-1">projects</h1>
+                    <h2 className="title is-2">projects</h2>
                     {this.state.repos &&
                         this.state.repos.map(repo => {
                             if (
@@ -52,7 +52,7 @@ export default class ProjectsPage extends Component {
                                         )}
                                     />
                                 )
-                            }
+                            } else return null
                         })}
                 </Layout>
             </>

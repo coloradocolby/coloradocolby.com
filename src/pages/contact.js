@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 
 import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
-import contactStyles from "./contact.module.scss"
+import styles from "./contact.module.scss"
 
 class ContactPage extends Component {
     constructor(props) {
@@ -39,6 +39,8 @@ class ContactPage extends Component {
     }
 
     validateForm = () => {
+        console.log(this.state)
+
         const { name, email, message } = this.state
         this.setState({
             validForm:
@@ -55,7 +57,7 @@ class ContactPage extends Component {
             <>
                 <Head title="Contact" />
                 <Layout>
-                    <h1 className="title is-1">dm sliding</h1>
+                    <h2 className="title is-2">dm sliding</h2>
                     <p className="m-b-md">
                         <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
                             @coloradocolby
@@ -65,12 +67,13 @@ class ContactPage extends Component {
 
                     <form
                         method="POST"
-                        netlify
+                        name="contact-form"
+                        data-netlify="true"
                         data-netlify-honeypot="honeypot-field"
-                        className={contactStyles.form}
+                        className={styles.form}
                     >
                         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                        <input type="hidden" name="form-name" value="contact" />
+                        {/* <input type="hidden" name="form-name" value="contact" /> */}
                         {/* This field is used by netlify as a honeypot for extra security
 							https://docs.netlify.com/forms/spam-filters/#honeypot-field	*/}
                         <div hidden>
@@ -82,7 +85,9 @@ class ContactPage extends Component {
                         <div className="field is-horizontal">
                             <div className="field-body">
                                 <div className="field">
-                                    <label className="label">name</label>
+                                    <label className="label" htmlFor="name">
+                                        name
+                                    </label>
                                     <div className="control is-expanded has-icons-left">
                                         <input
                                             className="input"
@@ -97,7 +102,9 @@ class ContactPage extends Component {
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label">email</label>
+                                    <label className="label" htmlFor="email">
+                                        email
+                                    </label>
                                     <div className="control is-expanded has-icons-left has-icons-right">
                                         <input
                                             className={`input ${!validEmail &&
@@ -130,7 +137,9 @@ class ContactPage extends Component {
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label">message</label>
+                            <label className="label" htmlFor="message">
+                                message
+                            </label>
                             <div className="control">
                                 <textarea
                                     className="textarea"
@@ -144,8 +153,8 @@ class ContactPage extends Component {
                         <div className="field">
                             <div className="control">
                                 <button
-                                    className={`button is-primary is-small ${validForm &&
-                                        contactStyles.enabledButton}`}
+                                    className={`button is-primary ${validForm &&
+                                        styles.enabledButton}`}
                                     disabled={!validForm}
                                     type="submit"
                                 >
