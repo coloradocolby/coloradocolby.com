@@ -39,8 +39,6 @@ class ContactPage extends Component {
     }
 
     validateForm = () => {
-        console.log(this.state)
-
         const { name, email, message } = this.state
         this.setState({
             validForm:
