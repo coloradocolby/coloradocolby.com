@@ -3,6 +3,7 @@ path: /blog/sorting-algorithms
 date: 2020-01-26T04:40:57.521Z
 title: Sorting Algorithms
 ---
+
 ```javascript
 /*** BUBBLE SORT ***/
 const bubbleSort = arr => {
