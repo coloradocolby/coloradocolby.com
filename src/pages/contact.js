@@ -8,20 +8,6 @@ import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
 import contactStyles from "./contact.module.scss"
 
-function encode(data) {
-    console.log("data", data)
-    const formData = new FormData()
-
-    for (const key of Object.keys(data)) {
-        console.log(key, data[key])
-        formData.append(key, data[key])
-        console.log("fd", formData)
-    }
-
-    console.log("returning formData", formData)
-    return formData
-}
-
 class ContactPage extends Component {
     constructor(props) {
         super(props)
@@ -32,23 +18,6 @@ class ContactPage extends Component {
             validForm: false,
             validEmail: true,
         }
-    }
-
-    /**
-     * https://docs.netlify.com/forms/setup/#submit-forms-via-ajax
-     */
-    handleSubmit = e => {
-        e.preventDefault()
-        const form = e.target
-        fetch("/", {
-            method: "POST",
-            body: encode({
-                "form-name": form.getAttribute("name"),
-                ...this.state,
-            }),
-        })
-            .then(() => console.log("submit success"))
-            .catch(error => alert(error))
     }
 
     handleChange = e => {
@@ -116,19 +85,13 @@ class ContactPage extends Component {
                     </p>
 
                     <form
-                        name="contactme"
                         method="POST"
                         data-netlify="true"
                         data-netlify-honeypot="bot-field"
-                        // onSubmit={this.handleSubmit}
                         className={contactStyles.form}
                     >
                         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                        <input
-                            type="hidden"
-                            name="form-name"
-                            value="file-upload"
-                        />
+                        <input type="hidden" name="form-name" value="contact" />
                         <div hidden>
                             <label>
                                 Don’t fill this out:{" "}
