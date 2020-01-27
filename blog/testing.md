@@ -1,11 +1,8 @@
 ---
-path: /blog/test
+path: /blog/sorting-algorithms
 date: 2020-01-26T04:40:57.521Z
-title: Testing to show Meesh
+title: Sorting Algorithms
 ---
-
-## ...1,2,3
-
 ```javascript
 /*** BUBBLE SORT ***/
 const bubbleSort = arr => {
