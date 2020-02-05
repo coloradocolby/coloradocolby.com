@@ -12,12 +12,14 @@ module.exports = {
         author: "colby",
     },
     plugins: [
+        `gatsby-transformer-sharp`,
+        `gatsby-plugin-sharp`,
         // Add static assets before markdown files
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                path: `${__dirname}/static/assets`,
                 name: "assets",
+                path: `${__dirname}/src/assets`,
             },
         },
         {
@@ -27,8 +29,6 @@ module.exports = {
                 path: `${__dirname}/blog`,
             },
         },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {

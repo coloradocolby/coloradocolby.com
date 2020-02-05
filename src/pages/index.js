@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
@@ -10,6 +11,14 @@ const IndexPage = () => {
             site {
                 siteMetadata {
                     author
+                }
+            }
+            file(relativePath: { eq: "me.jpg" }) {
+                childImageSharp {
+                    # Specify the image processing specifications right in the query.
+                    fluid {
+                        ...GatsbyImageSharpFluid_tracedSVG
+                    }
                 }
             }
         }
@@ -28,6 +37,10 @@ const IndexPage = () => {
                 <h4 className="is-size-4">
                     have an idea? <Link to="/contact">hmu</Link>
                 </h4>
+                {/* <Img
+                    fluid={data.file.childImageSharp.fluid}
+                    alt="colby thomas"
+                /> */}
             </Layout>
         </>
     )

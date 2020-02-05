@@ -25,7 +25,7 @@ const Header = () => {
                     <li>
                         <Link
                             to="/"
-                            className={headerStyles.navItem}
+                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
                             home
@@ -34,7 +34,7 @@ const Header = () => {
                     <li>
                         <Link
                             to="/projects/"
-                            className={headerStyles.navItem}
+                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
                             projects
@@ -43,7 +43,7 @@ const Header = () => {
                     <li>
                         <Link
                             to="/blog/"
-                            className={headerStyles.navItem}
+                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
                             blog
@@ -52,7 +52,7 @@ const Header = () => {
                     <li>
                         <Link
                             to="/contact/"
-                            className={headerStyles.navItem}
+                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
                             contact

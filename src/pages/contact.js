@@ -89,7 +89,10 @@ class ContactPage extends Component {
                                 <input name="bot-field" />
                             </label>
                         </div>
-                        <div className="field is-horizontal">
+                        <div
+                            className="field is-horizontal"
+                            style={{ marginBottom: "0px" }}
+                        >
                             <div className="field-body">
                                 <div className="field">
                                     <label className="label" htmlFor="name">

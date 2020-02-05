@@ -23,7 +23,7 @@ const bubbleSort = arr => {
     return arr
 }
 
-/*** SELECTION SORT ***/
+/**_ SELECTION SORT _**/
 const selectionSort = arr => {
     for (let i = 0; i < arr.length - 1; i++) {
         let minIdx = i
@@ -37,7 +37,7 @@ const selectionSort = arr => {
     return arr
 }
 
-/*** INSERTION SORT ***/
+/**_ INSERTION SORT _**/
 const insertionSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         let j = i
@@ -49,7 +49,7 @@ const insertionSort = arr => {
     return arr
 }
 
-/*** QUICK SORT ***/
+/**_ QUICK SORT _**/
 const quickSort = arr => {
     quickSortHelper(arr, 0, arr.length - 1)
     return arr
@@ -79,7 +79,7 @@ const quickSortHelper = (arr, start, end) => {
     quickSortHelper(arr, right + 1, end)
 }
 
-/*** MERGE SORT ***/
+/**_ MERGE SORT _**/
 const mergeSort = arr => {
     if (arr.length <= 1) return arr
     const mid = Math.floor(arr.length / 2)
@@ -94,7 +94,7 @@ const mergeSortHelper = (a1, a2, aux = []) => {
     return [...aux, ...a1, ...a2]
 }
 
-/*** SWAP ***/
+/**_ SWAP _**/
 const swap = (arr, i, j) => {
     const temp = arr[i]
     arr[i] = arr[j]
@@ -107,4 +107,8 @@ log("selectionsort\n", selectionSort([3, 2, 1, 5, 4, 6, 7]))
 log("insertionsort\n", insertionSort([3, 2, 1, 5, 4, 6, 7]))
 log("quicksort\n", quickSort([3, 2, 1, 5, 4, 6, 7]))
 log("mergesort\n", mergeSort([3, 2, 1, 5, 4, 6, 7]))
+```
+
+```
+
 ```
