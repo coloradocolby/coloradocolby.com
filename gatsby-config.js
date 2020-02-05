@@ -22,11 +22,12 @@ module.exports = {
                 path: `${__dirname}/src/assets`,
             },
         },
+
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                name: `blog-posts`,
                 path: `${__dirname}/blog`,
+                name: `blog-posts`,
             },
         },
         {
@@ -47,6 +48,7 @@ module.exports = {
                             maxWidth: 590,
                         },
                     },
+
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
