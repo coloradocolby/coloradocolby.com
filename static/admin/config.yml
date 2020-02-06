@@ -1,7 +1,7 @@
 backend:
     name: github
     repo: coloradocolby/colby.sh
-media_folder: static/assets
+media_folder: src/assets
 public_folder: assets
 collections:
     - name: blog
