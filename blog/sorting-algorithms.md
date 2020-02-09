@@ -108,7 +108,3 @@ log("insertionsort\n", insertionSort([3, 2, 1, 5, 4, 6, 7]))
 log("quicksort\n", quickSort([3, 2, 1, 5, 4, 6, 7]))
 log("mergesort\n", mergeSort([3, 2, 1, 5, 4, 6, 7]))
 ```
-
-```
-
-```

@@ -13,8 +13,8 @@ export default function Template({
         <>
             <Head title={frontmatter.title} />
             <Layout>
-                <h1 className="title">{frontmatter.title}</h1>
-                <h2 className="subtitle">{frontmatter.date}</h2>
+                <h1 className="title has-text-white">{frontmatter.title}</h1>
+                <h2 className="subtitle has-text-white">{frontmatter.date}</h2>
                 <div className="blog-post content">
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                 </div>
