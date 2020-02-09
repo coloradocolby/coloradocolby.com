@@ -31,28 +31,26 @@ export default class ProjectsPage extends Component {
             <>
                 <Head title="Projects" />
                 <Layout>
-                    <h2 className="title is-2">projects</h2>
-                    {this.state.repos &&
-                        this.state.repos.map(repo => {
-                            if (
-                                repo.topics &&
-                                repo.topics.length &&
-                                repo.topics.includes("skrrrt")
-                            ) {
-                                return (
-                                    <ProjectCard
-                                        key={repo.id}
-                                        name={repo.name}
-                                        desc={repo.description}
-                                        createdAt={repo.created_at}
-                                        htmlUrl={repo.html_url}
-                                        topics={repo.topics.filter(
-                                            t => t !== "skrrrt"
-                                        )}
-                                    />
-                                )
-                            } else return null
-                        })}
+                    {this.state.repos.map(repo => {
+                        if (
+                            repo.topics &&
+                            repo.topics.length &&
+                            repo.topics.includes("skrrrt")
+                        ) {
+                            return (
+                                <ProjectCard
+                                    key={repo.id}
+                                    name={repo.name}
+                                    desc={repo.description}
+                                    createdAt={repo.created_at}
+                                    htmlUrl={repo.html_url}
+                                    topics={repo.topics.filter(
+                                        t => t !== "skrrrt"
+                                    )}
+                                />
+                            )
+                        } else return null
+                    })}
                 </Layout>
             </>
         )

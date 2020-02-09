@@ -1,17 +1,26 @@
 import React from "react"
 import Header from "./header"
 import Footer from "./footer"
+import Background from "../assets/background.svg"
 
 import layoutStyles from "./layout.module.scss"
-// import "../styles/reset.scss"
+
+let svgStyles = {
+    background: `url(${Background}) no-repeat`,
+    backgroundSize: "cover",
+    height: "100vh",
+    position: "relative",
+}
 
 const Layout = props => (
-    <div className={layoutStyles.container}>
-        <div className={layoutStyles.content}>
-            <Header></Header>
-            {props.children}
+    <div style={svgStyles}>
+        <div className={layoutStyles.container}>
+            <div className={layoutStyles.content}>
+                <Header></Header>
+                {props.children}
+            </div>
+            <Footer></Footer>
         </div>
-        <Footer></Footer>
     </div>
 )
 

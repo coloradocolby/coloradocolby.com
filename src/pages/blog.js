@@ -26,7 +26,6 @@ const BlogPage = () => {
         <>
             <Head title="Blog" />
             <Layout>
-                <h2 className="title is-2">blog</h2>
                 {data.allMarkdownRemark.edges.map(edge => {
                     return (
                         <Link

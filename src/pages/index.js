@@ -28,13 +28,13 @@ const IndexPage = () => {
         <>
             <Head title="Home" />
             <Layout>
-                <h1 className="title is-1 m-b-lg">
+                <h1 className="title is-1 m-b-lg has-text-white">
                     hi, i'm {data.site.siteMetadata.author}
                 </h1>
-                <h2 className="subtitle is-2 m-b-lg">
+                <h2 className="subtitle is-2 m-b-lg has-text-white">
                     a software engineer in seattle
                 </h2>
-                <h4 className="is-size-4">
+                <h4 className="is-size-4 has-text-white">
                     have an idea? <Link to="/contact">hmu</Link>
                 </h4>
                 {/* <Img

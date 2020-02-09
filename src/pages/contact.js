@@ -55,8 +55,7 @@ class ContactPage extends Component {
             <>
                 <Head title="Contact" />
                 <Layout>
-                    <h2 className="title is-2">dm sliding</h2>
-                    <p className="m-b-md">
+                    <p className="m-b-md has-text-white">
                         <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
                             @coloradocolby
                         </a>{" "}
@@ -163,7 +162,7 @@ class ContactPage extends Component {
                         <div className="field">
                             <div className="control">
                                 <button
-                                    className={`button is-primary ${validForm &&
+                                    className={`button is-primary has-text-weight-bold ${validForm &&
                                         styles.enabledButton}`}
                                     disabled={!validForm}
                                     type="submit"

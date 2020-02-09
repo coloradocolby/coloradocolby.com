@@ -3,10 +3,14 @@
 }
 
 .title {
-    color: #000000;
+    color: #ffffff;
     font-size: 2.5rem;
     text-decoration: none;
     font-weight: bold;
+
+    &:hover {
+        color: #d4d4d4;
+    }
 }
 
 .nav-list {
@@ -16,16 +20,16 @@
 }
 
 .nav-item {
-    color: #999999;
+    color: #d4d4d4;
     font-size: 1.5rem;
     margin-right: 1.3rem;
     text-decoration: none;
 
     &:hover {
-        color: #666666;
+        color: #ffffff;
     }
 }
 
 .active-nav-item {
-    color: #333333;
+    color: #ffffff;
 }
