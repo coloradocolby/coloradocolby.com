@@ -1,13 +1,12 @@
 // Import a Google Font
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 
 // Set your brand colors
 $purple: #8a4d76;
+$grey-light: #35353b;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
-$grey-light: #35353b;
 $primary: $purple;
 $widescreen-enabled: false;
 $fullhd-enabled: false;
@@ -17,12 +16,15 @@ $body-background-color: $grey-light;
 $control-border-width: 2px;
 
 @import "~bulma";
-
 @import "spacing-helpers";
 
 pre {
     box-shadow: $box-shadow;
     border-radius: 10px;
+}
+
+body {
+    font-weight: bold !important;
 }
 // bulma overrides
 .number {
