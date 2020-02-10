@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { backgroundColor, textColor } from "../theme"
+import { backgroundColor, textColor, hoverColor } from "../theme"
 
 export const Main = styled.div`
     transition: all 0.5s;
@@ -15,14 +15,13 @@ export const ThemeTogglerWrapper = styled.div`
     color: #d4d4d4;
 
     &:hover {
-        color: #ffffff;
+        color: ${hoverColor};
     }
 `
 export const CustomCard = styled.div`
     transition: all 0.25s ease-in-out;
     background: rgba(255, 255, 255, 0.07);
     color: ${textColor};
-    font-weight: bold;
 
     border-radius: 10px;
     &:hover {
@@ -44,12 +43,34 @@ export const CardTop = styled.div`
     }
 `
 
-export const Title = styled.p`
+export const HeaderTitle = styled.p`
+    color: ${textColor};
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        color: ${hoverColor};
+    }
+`
+
+const whiteWithTransition = styled.p`
     transition: all 0.25s ease-in-out;
     color: ${textColor};
 `
 
-export const Subtitle = styled.p`
-    transition: all 0.25s ease-in-out;
+export const Title = whiteWithTransition
+export const Subtitle = whiteWithTransition
+export const Cta = whiteWithTransition
+export const P = whiteWithTransition
+
+export const NavItem = styled.div`
     color: ${textColor};
+    font-size: 1.5rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+
+    &:hover {
+        color: ${hoverColor};
+    }
 `

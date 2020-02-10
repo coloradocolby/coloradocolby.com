@@ -7,13 +7,12 @@ $grey-light: #35353b;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$primary: $purple;
-$widescreen-enabled: false;
-$fullhd-enabled: false;
+$link: $purple;
+$widescreen-enabled: true;
+$fullhd-enabled: true;
 
 // Update some of Bulma's component variables
 $body-background-color: $grey-light;
-$control-border-width: 2px;
 
 @import "bulma";
 @import "spacing-helpers";

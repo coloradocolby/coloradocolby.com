@@ -1,21 +1,25 @@
 import React from "react"
 import Header from "./header"
 import Footer from "./footer"
-import Background from "../assets/background.svg"
+import DarkBackground from "../assets/background-dark.svg"
+import LightBackground from "../assets/background-light.svg"
+
 import styled, { withTheme } from "styled-components"
 
 import layoutStyles from "./layout.module.scss"
 import { backgroundColor } from "../theme"
 import { Main } from "./styled"
 
-let svgStyles = {
-    background: `url(${Background}) no-repeat`,
-    backgroundSize: "cover",
-    height: "100vh",
-    position: "relative",
-}
-
 const Layout = props => {
+    let svgStyles = {
+        backgroundImage: `url(${
+            props.theme.mode === "light" ? LightBackground : DarkBackground
+        })`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        transition: "all .5s ease-in-out",
+    }
+
     console.log(props.theme)
     return (
         <Main>

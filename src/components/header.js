@@ -3,8 +3,8 @@ import { useTheme } from "../contexts/ThemeContext"
 import { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import headerStyles from "./header.module.scss"
-import { FaMoon, FaRegSun, FaRegMoon } from "react-icons/fa"
-import { ThemeTogglerWrapper } from "./styled"
+import { FaMoon, FaSun } from "react-icons/fa"
+import { ThemeTogglerWrapper, NavItem, HeaderTitle } from "./styled"
 
 const Header = ({ theme }) => {
     const themeToggle = useTheme()
@@ -20,9 +20,16 @@ const Header = ({ theme }) => {
     `)
     return (
         <header className={headerStyles.header}>
-            <h1>
-                <Link to="/" className={headerStyles.title}>
-                    {data.site.siteMetadata.site}
+            <h1
+                style={{
+                    position: "absolute",
+                    top: "5px",
+                    left: "15px",
+                    fontSize: ".5em",
+                }}
+            >
+                <Link to="/">
+                    <HeaderTitle>{data.site.siteMetadata.site}</HeaderTitle>
                 </Link>
             </h1>
             <nav>
@@ -30,49 +37,44 @@ const Header = ({ theme }) => {
                     <li>
                         <Link
                             to="/"
-                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
-                            home
+                            <NavItem>home</NavItem>
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/projects/"
-                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
-                            projects
+                            <NavItem>projects</NavItem>
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/blog/"
-                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
-                            blog
+                            <NavItem>blog</NavItem>
                         </Link>
                     </li>
                     <li>
                         <Link
                             to="/contact/"
-                            className={`animated bounce ${headerStyles.navItem}`}
                             activeClassName={headerStyles.activeNavItem}
                         >
-                            contact
+                            <NavItem>contact</NavItem>
                         </Link>
                     </li>
                     <li>
                         <ThemeTogglerWrapper>
                             {theme.mode === "light" ? (
-                                <FaRegMoon
+                                <FaMoon
                                     onClick={() => themeToggle.toggle()}
+                                    style={{ color: "black" }}
                                 />
                             ) : (
-                                <FaRegSun
-                                    onClick={() => themeToggle.toggle()}
-                                />
+                                <FaSun onClick={() => themeToggle.toggle()} />
                             )}
                         </ThemeTogglerWrapper>
                     </li>

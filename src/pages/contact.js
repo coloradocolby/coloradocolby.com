@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
 import styles from "./contact.module.scss"
+import { P } from "../components/styled"
 
 class ContactPage extends Component {
     constructor(props) {
@@ -55,12 +56,12 @@ class ContactPage extends Component {
             <>
                 <Head title="Contact" />
                 <Layout>
-                    <p className="m-b-md has-text-white">
+                    <P className="m-b-md">
                         <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
                             @coloradocolby
                         </a>{" "}
                         on twitter or fill out the form below
-                    </p>
+                    </P>
 
                     {/* Helpful
                         https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
@@ -94,14 +95,12 @@ class ContactPage extends Component {
                         >
                             <div className="field-body">
                                 <div className="field">
-                                    <label className="label" htmlFor="name">
-                                        name
-                                    </label>
                                     <div className="control is-expanded has-icons-left">
                                         <input
                                             className="input"
                                             type="text"
                                             name="name"
+                                            placeholder="name"
                                             value={name}
                                             onChange={this.handleChange}
                                         />
@@ -111,15 +110,13 @@ class ContactPage extends Component {
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label" htmlFor="email">
-                                        email
-                                    </label>
                                     <div className="control is-expanded has-icons-left has-icons-right">
                                         <input
                                             className={`input ${!validEmail &&
                                                 "is-danger"}`}
                                             type="email"
                                             name="email"
+                                            placeholder="email"
                                             value={email}
                                             onChange={this.handleChange}
                                             onBlur={this.validateEmail}
@@ -146,14 +143,12 @@ class ContactPage extends Component {
                             </div>
                         </div>
                         <div className="field">
-                            <label className="label" htmlFor="message">
-                                message
-                            </label>
                             <div className="control">
                                 <textarea
                                     className="textarea"
                                     type="text"
                                     name="message"
+                                    placeholder="message"
                                     value={message}
                                     onChange={this.handleChange}
                                 ></textarea>
@@ -162,7 +157,7 @@ class ContactPage extends Component {
                         <div className="field">
                             <div className="control">
                                 <button
-                                    className={`button is-primary has-text-weight-bold ${validForm &&
+                                    className={`button is-small is-link has-text-weight-bold ${validForm &&
                                         styles.enabledButton}`}
                                     disabled={!validForm}
                                     type="submit"

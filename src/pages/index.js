@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
+import { Title, Subtitle, Cta } from "../components/styled"
 
 const IndexPage = () => {
     const data = useStaticQuery(graphql`
@@ -28,15 +29,15 @@ const IndexPage = () => {
         <>
             <Head title="Home" />
             <Layout>
-                <h1 className="title is-1 m-b-lg has-text-white">
+                <Title className="title is-1 m-b-lg">
                     hi, i'm {data.site.siteMetadata.author}
-                </h1>
-                <h2 className="subtitle is-2 m-b-lg has-text-white">
+                </Title>
+                <Subtitle className="subtitle is-2 m-b-lg">
                     a software engineer in seattle
-                </h2>
-                <h4 className="is-size-4 has-text-white">
+                </Subtitle>
+                <Cta className="is-size-4">
                     have an idea? <Link to="/contact">hmu</Link>
-                </h4>
+                </Cta>
                 {/* <Img
                     fluid={data.file.childImageSharp.fluid}
                     alt="colby thomas"

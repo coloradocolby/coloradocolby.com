@@ -18,7 +18,6 @@ const Footer = () => {
             >
                 <FaGithub />
             </a>
-
             <a
                 href="https://www.instagram.com/coloradocolby"
                 target="_blank"
