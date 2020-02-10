@@ -14,13 +14,12 @@ export const useTheme = () => useContext(ThemeToggleContext)
 export const MyThemeProvider = ({ children }) => {
     //default mode is set to 'light'
     const [themeState, setThemeState] = useState({
-        mode: "light",
+        mode: localStorage.getItem("colby.sh:theme") || "dark",
     })
     // define toggle function
     const toggle = () => {
-        console.log("in toggle")
         const mode = themeState.mode === "light" ? "dark" : "light"
-
+        localStorage.setItem("colby.sh:theme", mode)
         setThemeState({ mode: mode })
     }
 

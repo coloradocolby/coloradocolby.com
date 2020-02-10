@@ -3,9 +3,10 @@ import { useTheme } from "../contexts/ThemeContext"
 import { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import headerStyles from "./header.module.scss"
-import { FaMoon } from "react-icons/fa"
+import { FaMoon, FaRegSun, FaRegMoon } from "react-icons/fa"
+import { ThemeTogglerWrapper } from "./styled"
 
-const Header = () => {
+const Header = ({ theme }) => {
     const themeToggle = useTheme()
     const data = useStaticQuery(graphql`
         query {
@@ -26,11 +27,6 @@ const Header = () => {
             </h1>
             <nav>
                 <ul className={headerStyles.navList}>
-                    <li>
-                        <div>
-                            <FaMoon onClick={() => themeToggle.toggle()} />
-                        </div>
-                    </li>
                     <li>
                         <Link
                             to="/"
@@ -66,6 +62,19 @@ const Header = () => {
                         >
                             contact
                         </Link>
+                    </li>
+                    <li>
+                        <ThemeTogglerWrapper>
+                            {theme.mode === "light" ? (
+                                <FaRegMoon
+                                    onClick={() => themeToggle.toggle()}
+                                />
+                            ) : (
+                                <FaRegSun
+                                    onClick={() => themeToggle.toggle()}
+                                />
+                            )}
+                        </ThemeTogglerWrapper>
                     </li>
                 </ul>
             </nav>

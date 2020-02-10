@@ -6,6 +6,7 @@ import styled, { withTheme } from "styled-components"
 
 import layoutStyles from "./layout.module.scss"
 import { backgroundColor } from "../theme"
+import { Main } from "./styled"
 
 let svgStyles = {
     background: `url(${Background}) no-repeat`,
@@ -13,11 +14,6 @@ let svgStyles = {
     height: "100vh",
     position: "relative",
 }
-
-let Main = styled.div`
-    background: ${backgroundColor};
-    transition: background-color 0.5s;
-`
 
 const Layout = props => {
     console.log(props.theme)

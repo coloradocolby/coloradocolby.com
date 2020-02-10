@@ -4,17 +4,30 @@ import { graphql } from "gatsby"
 import Head from "../components/head"
 import Layout from "../components/layout"
 
-export default function Template({
+import { Title, Subtitle } from "../components/styled"
+// import "prismjs/themes/prism-tomorrow.css" // for code highlighting
+import { withTheme } from "styled-components"
+
+const BlogTemplate = ({
     data, // this prop will be injected by the GraphQL query below.
-}) {
+    theme,
+}) => {
     const { markdownRemark } = data // data.markdownRemark holds your post data
     const { frontmatter, html } = markdownRemark
+
+    // TODO: revisit changing code theme on theme toggle
+    // if (theme === "dark") {
+    // require("prismjs/themes/prism-tomorrow.css")
+    // } else {
+    //     require("prismjs/themes/prism-solarizedlight.css")
+    // }
+
     return (
         <>
             <Head title={frontmatter.title} />
             <Layout>
-                <h1 className="title has-text-white">{frontmatter.title}</h1>
-                <h2 className="subtitle has-text-white">{frontmatter.date}</h2>
+                <Title className="title">{frontmatter.title}</Title>
+                <Subtitle className="subtitle">{frontmatter.date}</Subtitle>
                 <div className="blog-post content">
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                 </div>
@@ -35,3 +48,5 @@ export const pageQuery = graphql`
         }
     }
 `
+
+export default withTheme(BlogTemplate)

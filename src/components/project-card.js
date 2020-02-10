@@ -1,18 +1,21 @@
 import React from "react"
 import moment from "moment"
+import { CustomCard, CardTop, Title, Subtitle } from "./styled"
 
 export default props => (
     <a href={props.htmlUrl} target="_blank" rel="noopener noreferrer">
-        <div className="custom-card card m-b-md">
+        <CustomCard className="card m-b-md">
             <div className="card-content">
                 <div className="media">
                     <div className="media-content">
-                        <div className="card-top">
+                        <CardTop>
                             <div className="m-b-sm">
-                                <p className="title is-4">{props.name}</p>
-                                <p className="subtitle is-6">
+                                <Title className="title is-4">
+                                    {props.name}
+                                </Title>
+                                <Subtitle className="subtitle is-6">
                                     {moment(props.createdAt).fromNow()}
-                                </p>
+                                </Subtitle>
                             </div>
                             <div className="tags">
                                 {props.topics.map(t => (
@@ -24,11 +27,11 @@ export default props => (
                                     </span>
                                 ))}
                             </div>
-                        </div>
+                        </CardTop>
                     </div>
                 </div>
                 <div>{props.desc}</div>
             </div>
-        </div>
+        </CustomCard>
     </a>
 )
