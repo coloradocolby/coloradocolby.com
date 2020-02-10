@@ -1,8 +1,12 @@
 import React from "react"
+import { useTheme } from "../contexts/ThemeContext"
+import { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import headerStyles from "./header.module.scss"
+import { FaMoon } from "react-icons/fa"
 
 const Header = () => {
+    const themeToggle = useTheme()
     const data = useStaticQuery(graphql`
         query {
             site {
@@ -22,6 +26,11 @@ const Header = () => {
             </h1>
             <nav>
                 <ul className={headerStyles.navList}>
+                    <li>
+                        <div>
+                            <FaMoon onClick={() => themeToggle.toggle()} />
+                        </div>
+                    </li>
                     <li>
                         <Link
                             to="/"
@@ -63,4 +72,4 @@ const Header = () => {
         </header>
     )
 }
-export default Header
+export default withTheme(Header)
