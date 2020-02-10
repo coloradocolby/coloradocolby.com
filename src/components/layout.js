@@ -11,29 +11,34 @@ import { backgroundColor } from "../theme"
 import { Main } from "./styled"
 
 const Layout = props => {
-    let svgStyles = {
-        backgroundImage: `url(${
-            props.theme.mode === "light" ? LightBackground : DarkBackground
-        })`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-        transition: "all .5s ease-in-out",
-    }
-
-    console.log(props.theme)
-    return (
-        <Main>
-            <div style={svgStyles}>
-                <div className={layoutStyles.container}>
-                    <div className={layoutStyles.content}>
-                        <Header></Header>
-                        {props.children}
+    if (!!props.theme?.mode) {
+        return (
+            <Main>
+                <div
+                    style={{
+                        backgroundImage: `url(${
+                            props.theme.mode === "light"
+                                ? LightBackground
+                                : DarkBackground
+                        })`,
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "cover",
+                        transition: "all .5s ease-in-out",
+                    }}
+                >
+                    <div className={layoutStyles.container}>
+                        <div className={layoutStyles.content}>
+                            <Header></Header>
+                            {props.children}
+                        </div>
+                        <Footer></Footer>
                     </div>
-                    <Footer></Footer>
                 </div>
-            </div>
-        </Main>
-    )
+            </Main>
+        )
+    } else {
+        return null
+    }
 }
 
 export default withTheme(Layout)
