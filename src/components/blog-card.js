@@ -1,9 +1,7 @@
 import React from "react"
 
-import styles from "./blog-card.module.scss"
-
 export default ({ title, date }) => (
-    <div className={`${styles.blogCard} card m-b-md`}>
+    <div className={`custom-card card m-b-md`}>
         <div className="card-content">
             <div className="media">
                 <div className="media-content">

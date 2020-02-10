@@ -15,15 +15,63 @@ $fullhd-enabled: false;
 $body-background-color: $grey-light;
 $control-border-width: 2px;
 
-@import "~bulma";
+@import "bulma";
 @import "spacing-helpers";
-
+@import "loaders.css/src/animations/pacman.scss";
+.loader-hidden {
+    display: none;
+}
+.loader-active {
+    display: block;
+}
 pre {
     box-shadow: $box-shadow;
     border-radius: 10px;
 }
 
 // bulma overrides
-.number {
+.number,
+.loader {
+    // styles from Bulma that I don't want
     all: unset;
+}
+
+.title,
+.subtitle {
+    color: #ffffff;
+}
+
+.custom-card {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+
+    border-radius: 10px;
+    &:hover {
+        transform: translateX(0.1rem);
+    }
+}
+
+.card-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 1em;
+    overflow: hidden;
+}
+
+@media only screen and (min-width: 768px) {
+    .card-top {
+        flex-direction: row;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+
+    .tags {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        max-width: 400px;
+    }
 }
