@@ -1,6 +1,5 @@
 import React, { createContext, useState, useContext } from "react"
-import styled, { ThemeProvider } from "styled-components"
-import { backgroundColor, textColor } from "../theme"
+import { ThemeProvider } from "styled-components"
 
 // define our toggle context, with a default empty toggle function
 const ThemeToggleContext = createContext({

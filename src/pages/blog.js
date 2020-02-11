@@ -26,19 +26,23 @@ const BlogPage = () => {
         <>
             <Head title="Blog" />
             <Layout>
-                {data.allMarkdownRemark.edges.map(edge => {
-                    return (
-                        <Link
-                            to={`${edge.node.frontmatter.path}`}
-                            key={edge.node.frontmatter.path}
-                        >
-                            <BlogCard
-                                title={edge.node.frontmatter.title}
-                                date={edge.node.frontmatter.date}
-                            ></BlogCard>
-                        </Link>
-                    )
-                })}
+                <div className="columns is-multiline">
+                    {data.allMarkdownRemark.edges.map(edge => {
+                        return (
+                            <div className="column is-half">
+                                <Link
+                                    to={`${edge.node.frontmatter.path}`}
+                                    key={edge.node.frontmatter.path}
+                                >
+                                    <BlogCard
+                                        title={edge.node.frontmatter.title}
+                                        date={edge.node.frontmatter.date}
+                                    ></BlogCard>
+                                </Link>
+                            </div>
+                        )
+                    })}
+                </div>
             </Layout>
         </>
     )

@@ -3,7 +3,7 @@ import { useTheme } from "../contexts/ThemeContext"
 import { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import headerStyles from "./header.module.scss"
-import { FaMoon, FaSun } from "react-icons/fa"
+import { Moon, Sun } from "react-feather"
 import { ThemeTogglerWrapper, NavItem, HeaderTitle } from "./styled"
 
 const Header = ({ theme }) => {
@@ -66,21 +66,28 @@ const Header = ({ theme }) => {
                             <NavItem>contact</NavItem>
                         </Link>
                     </li>
-                    <li>
+                    <div
+                        style={{
+                            position: "absolute",
+                            top: "10px",
+                            right: "15px",
+                        }}
+                    >
                         <ThemeTogglerWrapper>
                             {theme.mode === "light" ? (
-                                <FaMoon
+                                <Moon
                                     onClick={() => themeToggle.toggle()}
                                     style={{ color: "black" }}
                                 />
                             ) : (
-                                <FaSun onClick={() => themeToggle.toggle()} />
+                                <Sun onClick={() => themeToggle.toggle()} />
                             )}
                         </ThemeTogglerWrapper>
-                    </li>
+                    </div>
                 </ul>
             </nav>
         </header>
     )
 }
+
 export default withTheme(Header)

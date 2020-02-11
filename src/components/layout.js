@@ -4,10 +4,9 @@ import Footer from "./footer"
 import DarkBackground from "../assets/background-dark.svg"
 import LightBackground from "../assets/background-light.svg"
 
-import styled, { withTheme } from "styled-components"
+import { withTheme } from "styled-components"
 
 import layoutStyles from "./layout.module.scss"
-import { backgroundColor } from "../theme"
 import { Main } from "./styled"
 
 const Layout = props => {
@@ -21,14 +20,15 @@ const Layout = props => {
                                 ? LightBackground
                                 : DarkBackground
                         })`,
+                        backgroundAttachment: "fixed",
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
                         transition: "all .5s ease-in-out",
                     }}
                 >
                     <div className={layoutStyles.container}>
+                        <Header></Header>
                         <div className={layoutStyles.content}>
-                            <Header></Header>
                             {props.children}
                         </div>
                         <Footer></Footer>

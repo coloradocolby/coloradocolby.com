@@ -1,13 +1,8 @@
 import React from "react"
 import footerStyles from "./footer.module.scss"
 
-import {
-    FaGithub,
-    FaTwitter,
-    FaLinkedin,
-    FaYoutube,
-    FaInstagram,
-} from "react-icons/fa"
+import { GitHub, Instagram, Twitter, Youtube, Linkedin } from "react-feather"
+import { SocialIcon } from "./styled"
 const Footer = () => {
     return (
         <footer className={footerStyles.footer}>
@@ -16,35 +11,45 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaGithub />
+                <SocialIcon>
+                    <GitHub />
+                </SocialIcon>
             </a>
             <a
                 href="https://www.instagram.com/coloradocolby"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaInstagram />
+                <SocialIcon>
+                    <Instagram />
+                </SocialIcon>
             </a>
             <a
                 href="https://www.twitter.com/coloradocolby"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaTwitter />
+                <SocialIcon>
+                    <Twitter />
+                </SocialIcon>
             </a>
             <a
                 href="https://www.youtube.com/coloradocolby"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaYoutube />
+                <SocialIcon>
+                    <Youtube />
+                </SocialIcon>
             </a>
             <a
                 href="https://www.linkedin.com/in/coloradocolby/"
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <FaLinkedin />
+                <SocialIcon>
+                    <Linkedin />
+                </SocialIcon>
             </a>
         </footer>
     )

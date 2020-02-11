@@ -48,13 +48,14 @@ export const HeaderTitle = styled.p`
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.25s ease-in-out;
 
     &:hover {
         color: ${hoverColor};
     }
 `
 
-const whiteWithTransition = styled.p`
+const whiteWithTransition = styled.div`
     transition: all 0.25s ease-in-out;
     color: ${textColor};
 `
@@ -63,14 +64,37 @@ export const Title = whiteWithTransition
 export const Subtitle = whiteWithTransition
 export const Cta = whiteWithTransition
 export const P = whiteWithTransition
+export const SocialIcon = styled.div`
+    transition: all 0.25s ease-in-out;
+    color: ${textColor};
+    &:hover {
+        color: ${hoverColor};
+    }
+`
 
 export const NavItem = styled.div`
     color: ${textColor};
-    font-size: 1.5rem;
-    margin-right: 1.3rem;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+    margin-right: 1.5rem;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.25s ease-in-out;
 
     &:hover {
         color: ${hoverColor};
+    }
+
+    @media only screen and (min-width: 950px) {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+`
+
+export const Intro = styled.div`
+    margin-top: 2em;
+
+    @media only screen and (min-width: 950px) {
+        margin-top: 3em;
     }
 `

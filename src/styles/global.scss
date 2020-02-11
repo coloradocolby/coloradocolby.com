@@ -13,6 +13,7 @@ $fullhd-enabled: true;
 
 // Update some of Bulma's component variables
 $body-background-color: $grey-light;
+$navbar-background-color: transparent;
 
 @import "bulma";
 @import "spacing-helpers";
