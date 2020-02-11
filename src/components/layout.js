@@ -13,27 +13,43 @@ const Layout = props => {
     if (!!props.theme?.mode) {
         return (
             <Main>
-                <div
-                    style={{
-                        backgroundImage: `url(${
-                            props.theme.mode === "light"
-                                ? LightBackground
-                                : DarkBackground
-                        })`,
-                        backgroundAttachment: "fixed",
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        transition: "all .5s ease-in-out",
-                    }}
-                >
-                    <div className={layoutStyles.container}>
-                        <Header></Header>
-                        <div className={layoutStyles.content}>
-                            {props.children}
+                {props.theme.mode === "light" ? (
+                    <div
+                        style={{
+                            backgroundImage: `url(${LightBackground})`,
+                            backgroundAttachment: "fixed",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            transition: "all .5s ease-in-out",
+                        }}
+                    >
+                        <div className={layoutStyles.container}>
+                            <Header></Header>
+                            <div className={layoutStyles.content}>
+                                {props.children}
+                            </div>
+                            <Footer></Footer>
                         </div>
-                        <Footer></Footer>
                     </div>
-                </div>
+                ) : (
+                    <div
+                        style={{
+                            backgroundImage: `url(${DarkBackground})`,
+                            backgroundAttachment: "fixed",
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            transition: "all .5s ease-in-out",
+                        }}
+                    >
+                        <div className={layoutStyles.container}>
+                            <Header></Header>
+                            <div className={layoutStyles.content}>
+                                {props.children}
+                            </div>
+                            <Footer></Footer>
+                        </div>
+                    </div>
+                )}
             </Main>
         )
     } else {
