@@ -1,4 +1,5 @@
 .container {
+    position: absolute;
     margin: 0 auto;
     max-width: 750px;
     padding: 1rem;
@@ -16,4 +17,17 @@
 .a {
     position: absolute;
     fill: #26272d;
+}
+
+.svg {
+    height: 700px;
+    flex: 0 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        height: 1080px;
+
+        flex-direction: row;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
 }
