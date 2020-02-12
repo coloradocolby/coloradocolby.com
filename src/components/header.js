@@ -10,8 +10,8 @@ import { textColor, hoverColor } from "../theme"
 const CustomLinkWrapper = styled.div`
     display: flex;
     margin: 0;
-    padding-top: 1.5rem;
-    justify-content: space-evenly;
+    padding-top: 2.5rem;
+    justify-content: space-between;
 
     @media only screen and (min-width: 1000px) {
         padding: 0;

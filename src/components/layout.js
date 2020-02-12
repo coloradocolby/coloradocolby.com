@@ -38,6 +38,7 @@ const Layout = props => {
                     style={{
                         display: "flex",
                         justifyContent: "center",
+                        overflow: "hidden",
                     }}
                 >
                     <SVG
