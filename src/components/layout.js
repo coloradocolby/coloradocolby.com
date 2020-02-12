@@ -21,7 +21,7 @@ const Layout = props => {
                     <svg
                         className={layoutStyles.svg}
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 1920 1080"
+                        viewBox="0 0 4001 595.68"
                     >
                         <path
                             style={{
@@ -33,10 +33,10 @@ const Layout = props => {
                                 transition: "fill .5s ease-in-out",
                             }}
                             class="curve"
-                            d="M.5-.5v735s544,71,911,0,1009,7,1009,7V-.5Z"
+                            d="M.5.5v512s499,124,857,40,827-122,1091-40,545,8,816-21,787,154,984,90,252-69,252-69V.5Z"
                         />
                     </svg>
-                </didfdfv>
+                </div>
 
                 <div className={layoutStyles.container}>
                     <Header />
