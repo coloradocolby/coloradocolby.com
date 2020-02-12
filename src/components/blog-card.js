@@ -1,8 +1,8 @@
 import React from "react"
-import { Title, Subtitle } from "./styled"
+import { Title, Subtitle, CustomCard } from "./styled"
 
 export default ({ title, date }) => (
-    <div className={`custom-card card`}>
+    <CustomCard className={`card`}>
         <div className="card-content">
             <div className="media">
                 <div className="media-content is-clipped p-sm">
@@ -11,5 +11,5 @@ export default ({ title, date }) => (
                 </div>
             </div>
         </div>
-    </div>
+    </CustomCard>
 )

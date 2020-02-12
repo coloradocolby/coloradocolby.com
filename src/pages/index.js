@@ -34,7 +34,7 @@ const IndexPage = () => {
                         hi, i'm {data.site.siteMetadata.author}
                     </Title>
                     <Subtitle className="subtitle is-2 m-b-lg">
-                        a software engineer in seattle
+                        a software engineer in dallas
                     </Subtitle>
                     <Cta className="is-size-4">
                         have an idea? <Link to="/contact">hmu</Link>

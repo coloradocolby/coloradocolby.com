@@ -1,18 +1,25 @@
 import React from "react"
 import Loader from "react-loaders"
+import styled, { withTheme } from "styled-components"
 
-const MyLoader = () => {
+const LoaderWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+`
+
+const MyLoader = ({ theme }) => {
     return (
-        <div style={{ display: "flex", justifyContent: "center" }}>
+        <LoaderWrapper>
             <Loader
-                type="pacman"
+                type="line-scale-pulse-out-rapid"
+                color={theme?.mode === "dark" ? "#ffffff" : "#252525"}
                 active
                 style={{
-                    transform: "scale(0.5)",
+                    transition: "all .5s ease-in-out",
                 }}
             />
-        </div>
+        </LoaderWrapper>
     )
 }
 
-export default MyLoader
+export default withTheme(MyLoader)

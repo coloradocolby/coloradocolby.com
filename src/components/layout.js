@@ -1,12 +1,34 @@
 import React from "react"
 import Header from "./header"
-import Navbar from "./header"
 import Footer from "./footer"
 
-import { withTheme } from "styled-components"
+import styled, { withTheme } from "styled-components"
 
 import layoutStyles from "./layout.module.scss"
-import { Main } from "./styled"
+const SVG_CONSTANTS = {
+    MOBILE_SIZE: "600px",
+    DESKTOP_SIZE: "700px",
+}
+const SVG = styled.svg`
+    height: ${SVG_CONSTANTS.MOBILE_SIZE};
+    flex: 0 0 auto;
+
+    @media only screen and (min-width: 768px) {
+        height: ${SVG_CONSTANTS.DESKTOP_SIZE};
+
+        flex-direction: row;
+        overflow: hidden;
+        padding-bottom: 0;
+    }
+`
+
+const ShiftUp = styled.div`
+    margin-top: -${SVG_CONSTANTS.MOBILE_SIZE};
+
+    @media only screen and (min-width: 768px) {
+        margin-top: -${SVG_CONSTANTS.DESKTOP_SIZE};
+    }
+`
 
 const Layout = props => {
     if (!!props.theme?.mode) {
@@ -18,8 +40,7 @@ const Layout = props => {
                         justifyContent: "center",
                     }}
                 >
-                    <svg
-                        className={layoutStyles.svg}
+                    <SVG
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 4001 595.68"
                     >
@@ -35,14 +56,18 @@ const Layout = props => {
                             class="curve"
                             d="M.5.5v512s499,124,857,40,827-122,1091-40,545,8,816-21,787,154,984,90,252-69,252-69V.5Z"
                         />
-                    </svg>
+                    </SVG>
                 </div>
 
-                <div className={layoutStyles.container}>
-                    <Header />
-                    <div className={layoutStyles.content}>{props.children}</div>
-                    <Footer />
-                </div>
+                <ShiftUp>
+                    <div className={layoutStyles.container}>
+                        <Header />
+                        <div className={layoutStyles.content}>
+                            {props.children}
+                        </div>
+                        <Footer />
+                    </div>
+                </ShiftUp>
             </>
         )
     } else {

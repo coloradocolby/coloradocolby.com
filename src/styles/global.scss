@@ -16,7 +16,7 @@ $navbar-background-color: transparent;
 
 @import "bulma";
 @import "spacing-helpers";
-@import "loaders.css/src/animations/pacman.scss";
+@import "loaders.css/src/animations/line-scale-pulse-out-rapid.scss";
 
 * {
     padding: 0;
@@ -36,6 +36,7 @@ body {
 .loader-active {
     display: block;
 }
+
 pre {
     box-shadow: $box-shadow;
     border-radius: 10px;
@@ -48,16 +49,11 @@ pre {
     all: unset;
 }
 
-.title,
-.subtitle {
-    color: #ffffff;
-}
-
 .custom-card {
     background: rgba(255, 255, 255, 0.07);
     color: #ffffff;
     font-weight: bold;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 
     border-radius: 10px;
     &:hover {
@@ -65,25 +61,6 @@ pre {
     }
 }
 
-.card-top {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: 1em;
-    overflow: hidden;
-}
-
-@media only screen and (min-width: 768px) {
-    .card-top {
-        flex-direction: row;
-        overflow: hidden;
-        padding-bottom: 0;
-    }
-
-    .tags {
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-        max-width: 400px;
-    }
+a:hover {
+    color: lighten($link, 5%);
 }
