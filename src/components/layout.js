@@ -11,12 +11,11 @@ import { Main } from "./styled"
 const Layout = props => {
     if (!!props.theme?.mode) {
         return (
-            <Main>
+            <>
                 <div
                     style={{
                         display: "flex",
                         justifyContent: "center",
-                        position: "relative",
                     }}
                 >
                     <svg
@@ -37,16 +36,14 @@ const Layout = props => {
                             d="M.5-.5v735s544,71,911,0,1009,7,1009,7V-.5Z"
                         />
                     </svg>
+                </didfdfv>
 
-                    <div className={layoutStyles.container}>
-                        <Header />
-                        <div className={layoutStyles.content}>
-                            {props.children}
-                        </div>
-                        <Footer />
-                    </div>
+                <div className={layoutStyles.container}>
+                    <Header />
+                    <div className={layoutStyles.content}>{props.children}</div>
+                    <Footer />
                 </div>
-            </Main>
+            </>
         )
     } else {
         return null

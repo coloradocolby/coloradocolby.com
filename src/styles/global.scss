@@ -12,12 +12,24 @@ $widescreen-enabled: true;
 $fullhd-enabled: true;
 
 // Update some of Bulma's component variables
-$body-background-color: $grey-light;
 $navbar-background-color: transparent;
 
 @import "bulma";
 @import "spacing-helpers";
 @import "loaders.css/src/animations/pacman.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+}
+
 .loader-hidden {
     display: none;
 }
