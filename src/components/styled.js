@@ -1,12 +1,6 @@
 import styled from "styled-components"
 import { backgroundColor, textColor, hoverColor } from "../theme"
 
-export const Main = styled.div`
-    background: ${backgroundColor};
-    height: 100%;
-    transition: all 0.5s ease-in-out;
-`
-
 export const ThemeTogglerWrapper = styled.div`
     height: 100%;
     display: flex;

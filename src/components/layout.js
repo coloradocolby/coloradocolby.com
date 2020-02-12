@@ -1,14 +1,22 @@
 import React from "react"
-import Header from "./header"
-import Footer from "./footer"
-
 import styled, { withTheme } from "styled-components"
 
+import Header from "./header"
+import Footer from "./footer"
 import layoutStyles from "./layout.module.scss"
+import { backgroundColor } from "../theme"
+
+const Main = styled.div`
+    background: ${backgroundColor};
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+`
+
 const SVG_CONSTANTS = {
     MOBILE_SIZE: "600px",
     DESKTOP_SIZE: "700px",
 }
+
 const SVG = styled.svg`
     height: ${SVG_CONSTANTS.MOBILE_SIZE};
     flex: 0 0 auto;
@@ -31,9 +39,9 @@ const ShiftUp = styled.div`
 `
 
 const Layout = props => {
-    if (!!props.theme?.mode) {
+    if (props.theme?.mode) {
         return (
-            <>
+            <Main>
                 <div
                     style={{
                         display: "flex",
@@ -43,19 +51,19 @@ const Layout = props => {
                 >
                     <SVG
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 4001 595.68"
+                        viewBox="0 0 4000 600"
                     >
                         <path
                             style={{
                                 fill: `${
-                                    props.theme.mode === "dark"
-                                        ? "#26272d"
-                                        : "#c8c8c8"
+                                    props.theme.mode === "light"
+                                        ? "#c8c8c8"
+                                        : "#26272d"
                                 }`,
-                                transition: "fill .5s ease-in-out",
+                                transition: "all .5s ease-in-out",
                             }}
-                            class="curve"
-                            d="M.5.5v512s499,124,857,40,827-122,1091-40,545,8,816-21,787,154,984,90,252-69,252-69V.5Z"
+                            className="curve"
+                            d="M.5.5v508s364,107,996,92S2139,335,3010,297s991,54,991,54L4000.5.5Z"
                         />
                     </SVG>
                 </div>
@@ -69,7 +77,7 @@ const Layout = props => {
                         <Footer />
                     </div>
                 </ShiftUp>
-            </>
+            </Main>
         )
     } else {
         return null

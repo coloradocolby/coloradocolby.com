@@ -5,13 +5,3 @@
 .active-nav-item {
     color: #ffffff;
 }
-
-@media only screen and (min-width: 1000px) {
-    .nav-list {
-        display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding-top: 0;
-        justify-content: space-between;
-    }
-}
