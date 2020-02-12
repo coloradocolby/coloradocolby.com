@@ -30,6 +30,10 @@ export const CustomCard = styled.div`
     &:hover {
         transform: translateX(0.1rem);
     }
+
+    @media only screen and (min-width: 768px) {
+        margin: 0;
+    }
 `
 export const CardTop = styled.div`
     transition: all 0.5s ease-in-out;
@@ -72,25 +76,6 @@ export const SocialIcon = styled.div`
     color: ${textColor};
     &:hover {
         color: ${hoverColor};
-    }
-`
-
-export const NavItem = styled.div`
-    color: ${textColor};
-    font-size: 1rem;
-    padding-top: 1rem;
-    margin-right: 1.5rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.5s ease-in-out;
-
-    &:hover {
-        color: ${hoverColor};
-    }
-
-    @media only screen and (min-width: 1000px) {
-        font-size: 1.5rem;
-        font-weight: normal;
     }
 `
 

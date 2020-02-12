@@ -8,6 +8,37 @@ import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
 import styles from "./contact.module.scss"
 import { P } from "../components/styled"
+import styled from "styled-components"
+import { textColor, backgroundColor } from "../theme"
+
+const Input = styled.input`
+    transition: background-color 0.5s ease-in-out;
+    background: ${backgroundColor} !important;
+    color: ${textColor} !important;
+    border-color: rgba(255, 255, 255, 0.3);
+    &:hover {
+        border-color: #8a4d76;
+    }
+
+    &::placeholder {
+        color: #bbbbbb;
+    }
+`
+
+const TextArea = styled.textarea`
+    transition: background-color 0.5s ease-in-out;
+    background: ${backgroundColor} !important;
+    color: ${textColor} !important;
+    border-color: rgba(255, 255, 255, 0.3);
+
+    &:hover {
+        border-color: #8a4d76;
+    }
+
+    &::placeholder {
+        color: #bbbbbb;
+    }
+`
 
 class ContactPage extends Component {
     constructor(props) {
@@ -96,7 +127,7 @@ class ContactPage extends Component {
                             <div className="field-body">
                                 <div className="field">
                                     <div className="control is-expanded has-icons-left">
-                                        <input
+                                        <Input
                                             className="input"
                                             type="text"
                                             name="name"
@@ -111,7 +142,7 @@ class ContactPage extends Component {
                                 </div>
                                 <div className="field">
                                     <div className="control is-expanded has-icons-left has-icons-right">
-                                        <input
+                                        <Input
                                             className={`input ${!validEmail &&
                                                 "is-danger"}`}
                                             type="email"
@@ -144,14 +175,14 @@ class ContactPage extends Component {
                         </div>
                         <div className="field">
                             <div className="control">
-                                <textarea
+                                <TextArea
                                     className="textarea"
                                     type="text"
                                     name="message"
                                     placeholder="message"
                                     value={message}
                                     onChange={this.handleChange}
-                                ></textarea>
+                                />
                             </div>
                         </div>
                         <div className="field">
