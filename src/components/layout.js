@@ -10,20 +10,16 @@ const Main = styled.div`
     background: ${backgroundColor};
     height: 100%;
     transition: all 0.5s ease-in-out;
+    overflow: hidden;
 `
 
-const SVG_CONSTANTS = {
-    MOBILE_SIZE: "600px",
-    DESKTOP_SIZE: "700px",
-}
+const SVG_SIZE = "700px"
 
 const SVG = styled.svg`
-    height: ${SVG_CONSTANTS.MOBILE_SIZE};
+    height: ${SVG_SIZE};
     flex: 0 0 auto;
 
     @media only screen and (min-width: 768px) {
-        height: ${SVG_CONSTANTS.DESKTOP_SIZE};
-
         flex-direction: row;
         overflow: hidden;
         padding-bottom: 0;
@@ -31,11 +27,7 @@ const SVG = styled.svg`
 `
 
 const ShiftUp = styled.div`
-    margin-top: -${SVG_CONSTANTS.MOBILE_SIZE};
-
-    @media only screen and (min-width: 768px) {
-        margin-top: -${SVG_CONSTANTS.DESKTOP_SIZE};
-    }
+    margin-top: -${SVG_SIZE};
 `
 
 const Layout = props => {

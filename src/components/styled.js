@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { backgroundColor, textColor, hoverColor } from "../theme"
+import { textColor, hoverColor } from "../theme"
 
 export const ThemeTogglerWrapper = styled.div`
     height: 100%;
