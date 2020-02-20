@@ -9,7 +9,11 @@ module.exports = {
     siteMetadata: {
         title: "colby.sh",
         site: "colby.🤫",
-        author: "colby",
+        author: {
+            name: "colby",
+            fullName: "colby thomas",
+            location: "dallas",
+        },
     },
     plugins: [
         `gatsby-transformer-sharp`,

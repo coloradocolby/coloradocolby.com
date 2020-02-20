@@ -13,22 +13,32 @@ export default class ProjectsPage extends Component {
             repos: [],
         }
     }
-    async componentDidMount() {
-        let repos = await fetch(
-            "https://api.github.com/users/coloradocolby/repos?sort=created",
-            {
-                headers: {
-                    Accept: "application/vnd.github.mercy-preview+json", // allows us to see topics
-                },
-            }
-        )
-        repos = await repos.json()
-        setTimeout(() => {
-            this.setState({
-                repos,
-            })
-        }, 500) // always show pacman for at least half a second, otherwise it's jarring
+
+    getGithubRepos() {
+        return new Promise(async resolve => {
+            let repos = await fetch(
+                "https://api.github.com/users/coloradocolby/repos?sort=updated",
+                {
+                    headers: {
+                        Accept: "application/vnd.github.mercy-preview+json", // allows us to see topics
+                    },
+                }
+            )
+            repos = await repos.json()
+            setTimeout(() => {
+                this.setState({
+                    repos,
+                })
+                resolve()
+            }, 500)
+            // always show loader for at least half a second,
+            //otherwise it's jarring if result is cached already
+        })
     }
+    async componentDidMount() {
+        await this.getGithubRepos()
+    }
+
     render() {
         const { repos } = this.state
         return (

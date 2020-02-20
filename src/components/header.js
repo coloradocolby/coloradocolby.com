@@ -44,7 +44,6 @@ const Header = ({ theme }) => {
         query {
             site {
                 siteMetadata {
-                    author
                     site
                 }
             }

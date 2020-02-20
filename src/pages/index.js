@@ -11,7 +11,10 @@ const IndexPage = () => {
         query {
             site {
                 siteMetadata {
-                    author
+                    author {
+                        name
+                        location
+                    }
                 }
             }
             file(relativePath: { eq: "me.jpg" }) {
@@ -31,10 +34,11 @@ const IndexPage = () => {
             <Layout>
                 <Intro>
                     <Title className="title is-1 m-b-lg">
-                        hi, i'm {data.site.siteMetadata.author}
+                        hi, i'm {data.site.siteMetadata.author.name}
                     </Title>
                     <Subtitle className="subtitle is-2 m-b-lg">
-                        a software engineer in dallas
+                        a software craftsmen in{" "}
+                        {data.site.siteMetadata.author.location}
                     </Subtitle>
                     <Cta className="is-size-4">
                         have an idea? <Link to="/contact">hmu</Link>
