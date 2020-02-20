@@ -23,15 +23,23 @@ module.exports = {
             resolve: "gatsby-source-filesystem",
             options: {
                 name: "assets",
+                // 'name' is required by gatsby-source-filesystem (you can use it to query)
+                // https://www.gatsbyjs.org/packages/gatsby-source-filesystem/#how-to-query
                 path: `${__dirname}/src/assets`,
             },
         },
-
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/blog`,
                 name: `blog-posts`,
+                path: `${__dirname}/blog`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `projects`,
+                path: `${__dirname}/projects`,
             },
         },
         {

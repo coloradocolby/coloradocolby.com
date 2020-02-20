@@ -8,7 +8,7 @@ import { Title, Subtitle } from "../components/styled"
 // import "prismjs/themes/prism-tomorrow.css" // for code highlighting
 import { withTheme } from "styled-components"
 
-const BlogTemplate = ({
+const ContentTemplate = ({
     data, // this prop will be injected by the GraphQL query below.
     theme,
 }) => {
@@ -49,4 +49,4 @@ export const pageQuery = graphql`
     }
 `
 
-export default withTheme(BlogTemplate)
+export default withTheme(ContentTemplate)
