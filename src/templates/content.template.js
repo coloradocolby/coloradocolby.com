@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Img from "gatsby-image" // example usage below
 
 import Head from "../components/head"
 import Layout from "../components/layout"
@@ -14,6 +15,8 @@ const ContentTemplate = ({
 }) => {
     const { markdownRemark } = data // data.markdownRemark holds your post data
     const { frontmatter, html } = markdownRemark
+    console.log("fm")
+    console.log(frontmatter)
 
     // TODO: revisit changing code theme on theme toggle
     // if (theme === "dark") {
@@ -28,9 +31,9 @@ const ContentTemplate = ({
             <Layout>
                 <Title className="title">{frontmatter.title}</Title>
                 <Subtitle className="subtitle">{frontmatter.date}</Subtitle>
-                <img
-                    src={frontmatter.card_info.preview_image}
-                    alt="this is a meaningful alt prop"
+                <Img
+                    fluid={frontmatter.thumbnail.childImageSharp.fluid}
+                    alt="colby thomas"
                 />
                 <div className="blog-post content">
                     <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -48,11 +51,6 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 title
-                card_info {
-                    description
-                    preview_image
-                    project_name
-                }
             }
         }
     }

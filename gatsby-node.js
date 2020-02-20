@@ -1,5 +1,8 @@
 // https://www.gatsbyjs.org/docs/adding-markdown-pages/#create-static-pages-using-gatsbys-nodejs-createpage-api
 const path = require(`path`)
+// https://www.gatsbyjs.org/packages/gatsby-remark-relative-images/#to-convert-frontmatter-images
+// gatsby-node.js
+const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
     const { createPage } = actions
@@ -37,10 +40,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         })
     })
 }
-
-// https://www.gatsbyjs.org/packages/gatsby-remark-relative-images/#to-convert-frontmatter-images
-// gatsby-node.js
-const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 
 exports.onCreateNode = ({ node }) => {
     fmImagesToRelative(node)

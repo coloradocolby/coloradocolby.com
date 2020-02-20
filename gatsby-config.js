@@ -16,32 +16,47 @@ module.exports = {
         },
     },
     plugins: [
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
-        // Add static assets before markdown files
+        `gatsby-plugin-sass`,
         {
             resolve: "gatsby-source-filesystem",
             options: {
-                name: "assets",
+                path: `${__dirname}/static/img`,
+                name: "uploads",
                 // 'name' is required by gatsby-source-filesystem (you can use it to query)
                 // https://www.gatsbyjs.org/packages/gatsby-source-filesystem/#how-to-query
-                path: `${__dirname}/src/assets`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
+                path: `${__dirname}/src/blog`,
                 name: `blog-posts`,
-                path: `${__dirname}/blog`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
+                path: `${__dirname}/src/projects`,
                 name: `projects`,
-                path: `${__dirname}/projects`,
             },
         },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/pages`,
+                name: `pages`,
+            },
+        },
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                path: `${__dirname}/src/img`,
+                name: `images`,
+            },
+        },
+
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
             resolve: `gatsby-transformer-remark`,
             options: {
@@ -129,7 +144,7 @@ module.exports = {
                 ],
             },
         },
-        `gatsby-plugin-sass`,
-        `gatsby-plugin-netlify-cms`,
+        `gatsby-plugin-netlify-cms`, // make sure this is last
+        `gatsby-plugin-netlify`,
     ],
 }

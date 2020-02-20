@@ -1,49 +1,45 @@
 backend:
     name: github
     repo: coloradocolby/colby.sh
-media_folder: src/assets
-public_folder: assets
+
+media_folder: static/img
+public_folder: /img
+
 collections:
     - name: blog
       label: Blog
-      folder: blog
+      folder: src/blog
       create: true
       fields:
-          - { name: path, label: Path }
-          - { name: date, label: Date, widget: datetime }
-          - { name: title, label: Title }
-          - { name: body, label: Body, widget: markdown }
+          - {
+                label: Template Key,
+                name: templateKey,
+                widget: hidden,
+                default: blog-post,
+            }
+          - { label: Path, name: path, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Published Date, name: date, widget: datetime }
+          - { label: Description, name: description, widget: string }
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Body, name: body, widget: markdown }
+          - { label: Tags, name: tags, widget: list }
+
     - name: projects
       label: Projects
-      folder: projects
+      folder: src/projects
       create: true
       fields:
-          - { name: path, label: Path }
-          - { name: date, label: Date, widget: datetime }
-          - { name: title, label: Title }
-          - { name: thumbnail, label: Thumbnail, widget: image }
-          - { name: body, label: Body, widget: markdown }
-          - label: "CardInfo"
-            name: "card_info"
-            widget: "object"
-            fields:
-                - {
-                      label: "ProjectName",
-                      name: "project_name",
-                      widget: "string",
-                  }
-                - {
-                      label: "Description",
-                      name: "description",
-                      widget: "string",
-                  }
-                - {
-                      label: "PreviewImage",
-                      name: "preview_image",
-                      widget: "image",
-                  }
-                - {
-                      label: "Technologies",
-                      name: "technologies",
-                      widget: "list",
-                  }
+          - {
+                label: Template Key,
+                name: templateKey,
+                widget: hidden,
+                default: blog-post,
+            }
+          - { label: Path, name: path, widget: string }
+          - { label: Title, name: title, widget: string }
+          - { label: Published Date, name: date, widget: datetime }
+          - { label: Description, name: description, widget: string }
+          - { label: Featured Image, name: featuredImage, widget: image }
+          - { label: Body, name: body, widget: markdown }
+          - { label: Tags, name: tags, widget: list }
