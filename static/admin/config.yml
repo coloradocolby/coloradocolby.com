@@ -37,6 +37,11 @@ collections:
                       widget: "string",
                   }
                 - {
+                      label: "PreviewImage",
+                      name: "preview_image",
+                      widget: "image",
+                  }
+                - {
                       label: "Technologies",
                       name: "technologies",
                       widget: "list",

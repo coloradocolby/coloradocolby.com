@@ -28,6 +28,10 @@ const ContentTemplate = ({
             <Layout>
                 <Title className="title">{frontmatter.title}</Title>
                 <Subtitle className="subtitle">{frontmatter.date}</Subtitle>
+                <img
+                    src={frontmatter.card_info.preview_image}
+                    alt="this is a meaningful alt prop"
+                />
                 <div className="blog-post content">
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                 </div>
@@ -44,6 +48,11 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 title
+                card_info {
+                    description
+                    preview_image
+                    project_name
+                }
             }
         }
     }
