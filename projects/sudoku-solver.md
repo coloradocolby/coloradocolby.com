@@ -10,9 +10,11 @@ card_info:
     - typescript
     - canvas
 ---
+![sudoku_alt](assets/sudoku-solver.png "sudoku")
+
+
+
 **This is how I solve sudoku using depth-first-search and backtracking...**
-
-
 
 ```javascript
 const dope = 'this'
