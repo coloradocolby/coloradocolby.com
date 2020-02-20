@@ -21,6 +21,7 @@ collections:
           - { name: path, label: Path }
           - { name: date, label: Date, widget: datetime }
           - { name: title, label: Title }
+          - { name: thumbnail, label: Thumbnail, widget: image }
           - { name: body, label: Body, widget: markdown }
           - label: "CardInfo"
             name: "card_info"
