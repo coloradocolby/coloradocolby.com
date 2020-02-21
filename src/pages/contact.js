@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 
 import { FaUser, FaEnvelope, FaExclamationTriangle } from "react-icons/fa"
 
-import styles from "./contact.module.scss"
+// import styles from "./contact.module.scss"
 import { P } from "../components/styled"
 import styled from "styled-components"
 import { textColor, backgroundColor } from "../theme"
@@ -78,6 +78,7 @@ class ContactPage extends Component {
                 validator.isEmail(email) &&
                 message.length > 0,
         })
+        console.log("this.state", this.state)
     }
 
     render() {
@@ -87,117 +88,119 @@ class ContactPage extends Component {
             <>
                 <Head title="Contact" />
                 <Layout>
-                    <P className="m-b-md">
-                        <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
-                            @coloradocolby
-                        </a>{" "}
-                        on twitter or fill out the form below
-                    </P>
+                    <div className="mt-12 flex justify-center">
+                        <div class="w-full">
+                            <h3 className="text-xl">
+                                <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
+                                    @coloradocolby
+                                </a>{" "}
+                                on twitter or fill out the form below
+                            </h3>
 
-                    {/* Helpful
+                            {/* new */}
+                            {/* Helpful
                         https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/ */}
-                    <form
-                        name="contact-form"
-                        method="POST"
-                        data-netlify="true"
-                        data-netlify-honeypot="bot-field"
-                        className={styles.form}
-                    >
-                        {/* The `form-name` hidden field is required to support form submissions without JavaScript 
+                            <form
+                                className="w-full max-w-2xl"
+                                name="contact-form"
+                                method="POST"
+                                data-netlify="true"
+                                data-netlify-honeypot="bot-field"
+                            >
+                                {/* The `form-name` hidden field is required to support form submissions without JavaScript 
                             Gatsby strips out input fields that are not included in the JSX form, so you will still need 
                             to add the form-name hidden input field
                             https://www.netlify.com/blog/2017/07/20/how-to-integrate-netlifys-form-handling-in-a-react-app/#step-2 */}
-                        <input
-                            type="hidden"
-                            name="form-name"
-                            value="contact-form"
-                        />
-                        {/* This field is used by netlify as a honeypot for extra security
+                                <input
+                                    type="hidden"
+                                    name="form-name"
+                                    value="contact-form"
+                                />
+                                {/* This field is used by netlify as a honeypot for extra security
 							https://docs.netlify.com/forms/spam-filters/#honeypot-field	*/}
-                        <div hidden>
-                            <label>
-                                only a bot would fill this out:{" "}
-                                <input name="bot-field" />
-                            </label>
-                        </div>
-                        <div
-                            className="field is-horizontal"
-                            style={{ marginBottom: "0px" }}
-                        >
-                            <div className="field-body">
-                                <div className="field">
-                                    <div className="control is-expanded has-icons-left">
-                                        <Input
-                                            className="input"
+                                <div hidden>
+                                    <label>
+                                        only a bot would fill this out:{" "}
+                                        <input name="bot-field" />
+                                    </label>
+                                </div>
+                                <div className="flex flex-wrap -mx-3">
+                                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                        {/* <label
+                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            htmlFor="grid-name"
+                                        >
+                                            Name
+                                        </label> */}
+                                        <input
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                            id="name"
                                             type="text"
                                             name="name"
-                                            placeholder="name"
+                                            placeholder="joe sakic"
                                             value={name}
                                             onChange={this.handleChange}
                                         />
-                                        <span className="icon is-small is-left">
-                                            <FaUser />
-                                        </span>
                                     </div>
-                                </div>
-                                <div className="field">
-                                    <div className="control is-expanded has-icons-left has-icons-right">
-                                        <Input
-                                            className={`input ${!validEmail &&
-                                                "is-danger"}`}
+                                    <div className="w-full md:w-1/2 px-3">
+                                        {/* <label
+                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            htmlFor="email"
+                                        >
+                                            Email
+                                        </label> */}
+                                        <input
+                                            className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!validEmail &&
+                                                "border-red-500"}`}
+                                            id="email"
                                             type="email"
                                             name="email"
-                                            placeholder="email"
+                                            placeholder="jsakic@gmail.com"
                                             value={email}
                                             onChange={this.handleChange}
                                             onBlur={this.validateEmail}
                                         />
-                                        <span className="icon is-small is-left">
-                                            <FaEnvelope />
-                                        </span>
-                                        {!validEmail && (
-                                            <span className="icon is-small is-right">
-                                                <FaExclamationTriangle />
-                                            </span>
-                                        )}
+                                        <p
+                                            className={`text-red-500 text-xs italic ${validEmail &&
+                                                "invisible"}`}
+                                        >
+                                            invalid email
+                                        </p>
                                     </div>
-                                    <p
-                                        className={`help ${
-                                            !validEmail
-                                                ? "is-danger"
-                                                : "is-invisible"
-                                        }`}
-                                    >
-                                        invalid email
-                                    </p>
                                 </div>
-                            </div>
+                                <div className="flex flex-wrap -mx-3 mb-6">
+                                    <div className="w-full px-3">
+                                        {/* <label
+                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                            htmlFor="message"
+                                        >
+                                            message
+                                        </label> */}
+                                        <textarea
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                            placeholder="Great website!"
+                                            name="message"
+                                            type="text"
+                                            id="message"
+                                            rows="7"
+                                            placeholder="message"
+                                            value={message}
+                                            onChange={this.handleChange}
+                                        />
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-end">
+                                    <button
+                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        type="button"
+                                        disabled={!validForm}
+                                    >
+                                        submit
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div className="field">
-                            <div className="control">
-                                <TextArea
-                                    className="textarea"
-                                    type="text"
-                                    name="message"
-                                    placeholder="message"
-                                    value={message}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
-                        </div>
-                        <div className="field">
-                            <div className="control">
-                                <button
-                                    className={`button is-small is-link has-text-weight-bold ${validForm &&
-                                        styles.enabledButton}`}
-                                    disabled={!validForm}
-                                    type="submit"
-                                >
-                                    submit
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    </div>
                 </Layout>
             </>
         )

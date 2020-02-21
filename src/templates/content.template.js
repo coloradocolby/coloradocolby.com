@@ -15,8 +15,6 @@ const ContentTemplate = ({
 }) => {
     const { markdownRemark } = data // data.markdownRemark holds your post data
     const { frontmatter, html } = markdownRemark
-    console.log("fm")
-    console.log(frontmatter)
 
     // TODO: revisit changing code theme on theme toggle
     // if (theme === "dark") {
@@ -31,11 +29,7 @@ const ContentTemplate = ({
             <Layout>
                 <Title className="title">{frontmatter.title}</Title>
                 <Subtitle className="subtitle">{frontmatter.date}</Subtitle>
-                <Img
-                    fluid={frontmatter.thumbnail.childImageSharp.fluid}
-                    alt="colby thomas"
-                />
-                <div className="blog-post content">
+                <div className="content">
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                 </div>
             </Layout>
@@ -51,6 +45,14 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 title
+                featuredImage {
+                    childImageSharp {
+                        # Specify the image processing specifications right in the query.
+                        fluid {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
             }
         }
     }

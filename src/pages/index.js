@@ -33,14 +33,14 @@ const IndexPage = () => {
             <Head title="Home" />
             <Layout>
                 <Intro>
-                    <Title className="title is-1 m-b-lg">
+                    <Title className="text-5xl font-semibold">
                         hi, i'm {data.site.siteMetadata.author.name}
                     </Title>
-                    <Subtitle className="subtitle is-2 m-b-lg">
+                    <Subtitle className="text-4xl mb-5">
                         a software craftsmen in{" "}
                         {data.site.siteMetadata.author.location}
                     </Subtitle>
-                    <Cta className="is-size-4">
+                    <Cta className="text-2xl">
                         have an idea? <Link to="/contact">hmu</Link>
                     </Cta>
                     {/* <Img

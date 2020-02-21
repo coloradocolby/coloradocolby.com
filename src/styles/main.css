@@ -1,0 +1,50 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    height: 100%;
+    font-family: "Nunito";
+}
+
+.loader-hidden {
+    display: none;
+}
+.loader-active {
+    display: block;
+}
+
+pre {
+    /* box-shadow: $box-shadow; */
+    border-radius: 10px;
+}
+
+/* // bulma overrides */
+.number,
+.loader {
+    /* // styles from Bulma that I don't want */
+    all: unset;
+}
+
+.custom-card {
+    background: rgba(255, 255, 255, 0.07);
+    color: #ffffff;
+    font-weight: bold;
+    transition: all 0.5s ease-in-out;
+
+    border-radius: 10px;
+}
+
+.custom-card:hover {
+    transform: translateX(0.1rem);
+}
+
+/* a:hover {
+    color: lighten($link, 5%);
+} */

@@ -16,7 +16,12 @@ module.exports = {
         },
     },
     plugins: [
-        `gatsby-plugin-sass`,
+        {
+            resolve: `gatsby-plugin-postcss`,
+            options: {
+                postCssPlugins: [require("tailwindcss")],
+            },
+        },
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -29,8 +34,8 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/src/blog`,
-                name: `blog-posts`,
+                path: `${__dirname}/src/posts`,
+                name: `posts`,
             },
         },
         {

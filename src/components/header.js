@@ -2,7 +2,7 @@ import React from "react"
 import { useTheme } from "../contexts/ThemeContext"
 import styled, { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import headerStyles from "./header.module.scss"
+// import headerStyles from "./header.module.scss"
 import { Moon, Sun } from "react-feather"
 import { ThemeTogglerWrapper, HeaderTitle } from "./styled"
 import { textColor, hoverColor } from "../theme"
@@ -50,7 +50,9 @@ const Header = ({ theme }) => {
         }
     `)
     return (
-        <header className={headerStyles.header}>
+        <header
+        // className={headerStyles.header}
+        >
             <h1
                 style={{
                     position: "absolute",
@@ -65,24 +67,27 @@ const Header = ({ theme }) => {
             </h1>
             <nav>
                 <CustomLinkWrapper>
-                    <Link to="/" activeClassName={headerStyles.activeNavItem}>
+                    <Link
+                        to="/"
+                        // activeClassName={headerStyles.activeNavItem}
+                    >
                         <CustomLink>home</CustomLink>
                     </Link>
                     <Link
                         to="/projects/"
-                        activeClassName={headerStyles.activeNavItem}
+                        // activeClassName={headerStyles.activeNavItem}
                     >
                         <CustomLink>projects</CustomLink>
                     </Link>
                     <Link
-                        to="/blog/"
-                        activeClassName={headerStyles.activeNavItem}
+                        to="/posts/"
+                        // activeClassName={headerStyles.activeNavItem}
                     >
-                        <CustomLink>blog</CustomLink>
+                        <CustomLink>posts</CustomLink>
                     </Link>
                     <Link
                         to="/contact/"
-                        activeClassName={headerStyles.activeNavItem}
+                        // activeClassName={headerStyles.activeNavItem}
                     >
                         <CustomLink>contact</CustomLink>
                     </Link>
