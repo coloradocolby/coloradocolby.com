@@ -93,7 +93,7 @@ class ContactPage extends Component {
                             <h3 className="text-xl mb-6">
                                 <a
                                     href="https://twitter.com/messages/compose?recipient_id=4227576672"
-                                    className="text-indigo-700"
+                                    className="text-primary"
                                 >
                                     @coloradocolby
                                 </a>{" "}
@@ -194,7 +194,7 @@ class ContactPage extends Component {
                                 </div>
                                 <div class="flex items-center justify-end">
                                     <button
-                                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        class="bg-primary-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                                         type="button"
                                         disabled={!validForm}
                                     >

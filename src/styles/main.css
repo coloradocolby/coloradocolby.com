@@ -42,9 +42,15 @@ pre {
 }
 
 .custom-card:hover {
-    transform: translateX(0.1rem);
 }
 
 /* a:hover {
     color: lighten($link, 5%);
 } */
+
+.lift-on-hover {
+    transition: all 0.1s ease-in-out;
+}
+.lift-on-hover:hover {
+    transform: translateY(-0.1rem);
+}

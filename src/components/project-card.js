@@ -6,13 +6,13 @@ import { textColor } from "../theme"
 import { P } from "../components/styled"
 
 const Title = styled.div.attrs({
-    className: "font-bold text-2xl",
+    className: "font-bold text-2xl tracking-wide",
 })`
     color: ${textColor};
     transition: color 0.5s ease-in-out;
 `
 const Ago = styled.div.attrs({
-    className: "text-base text-xs tracking-narrow lowercase font-bold",
+    className: "text-base text-xs tracking-narrow font-bold",
 })`
     color: ${textColor};
     transition: color 0.5s ease-in-out;
@@ -26,30 +26,30 @@ const ProjectCard = ({
     tags,
     description,
 }) => {
+    console.log("fi", featuredImage)
     return (
-        <div className="h-full shadow-xl flex flex-col items-start p-6 rounded-lg m-3">
-            {/* <Img
-                className="shadow-xl rounded-lg my-0 mx-auto"
-                fixed={featuredImage}
-                alt={title}
-                style={{
-                    maxHeight: "400px",
-                }}
-            /> */}
-
-            <Title>{title}</Title>
-            <Ago>{moment(date).fromNow()}</Ago>
-            <P>{description}</P>
-            {/* <div className="my-2">
-                {tags.map((t, i) => (
-                    <span
-                        key={i}
-                        className="inline-block bg-purple-700 rounded-full px-2 py-1 text-xs sm:text-sm font-semibold text-gray-200 mr-2 mb-1"
-                    >
-                        #{t}
-                    </span>
-                ))}
-            </div> */}
+        <div className="shadow-lg rounded-lg m-3 lift-on-hover">
+            <div className="px-6 py-4">
+                <div className="flex flex-col lg:flex-row justify-between">
+                    <div>
+                        <Title>{title}</Title>
+                        <Ago>{moment(date).fromNow()}</Ago>
+                        <P>{description}</P>
+                    </div>
+                    <div>
+                        <div className="mt-2 flex flex-row flex-wrap lg:justify-end">
+                            {tags.map((t, i) => (
+                                <div
+                                    key={i}
+                                    className="bg-primary rounded-full px-3 py-1 text-2xs font-semibold tracking-wide text-gray-200 mr-1  mb-2"
+                                >
+                                    {t}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

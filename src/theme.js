@@ -7,7 +7,7 @@ export const backgroundColor = theme("mode", {
 
 export const textColor = theme("mode", {
     light: "#252525",
-    dark: "#ffffff",
+    dark: "#edf2f7",
 })
 
 export const hoverColor = theme("mode", {

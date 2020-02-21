@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
@@ -17,14 +18,6 @@ const ProjectPage = () => {
                             title
                             path
                             date(formatString: "MMMM DD, YYYY")
-                            featuredImage {
-                                childImageSharp {
-                                    # Specify the image processing specifications right in the query.
-                                    fixed(height: 300) {
-                                        ...GatsbyImageSharpFixed
-                                    }
-                                }
-                            }
                             description
                             tags
                         }
@@ -38,25 +31,21 @@ const ProjectPage = () => {
         <>
             <Head title="Posts" />
             <Layout>
-                <div className="flex flex-col md:flex-row">
+                <div className="flex flex-col">
                     {data.allMarkdownRemark.edges.map(edge => {
                         const {
                             path,
                             title,
                             date,
-                            featuredImage,
                             description,
                             tags,
                         } = edge.node.frontmatter
                         return (
-                            <div className="w-full md:w-1/2">
+                            <div className="w-full">
                                 <Link to={`${path}`} key={path}>
                                     <ProjectCard
                                         title={title}
                                         date={date}
-                                        featuredImage={
-                                            featuredImage?.childImageSharp.fluid
-                                        }
                                         description={description}
                                         tags={tags}
                                     ></ProjectCard>

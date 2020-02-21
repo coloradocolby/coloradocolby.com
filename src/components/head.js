@@ -23,7 +23,7 @@ const Head = ({ title }) => {
             </title>
             <meta
                 name="description"
-                content={`${data.site.siteMetadata.author.fullName} - a software craftsmen in ${data.site.siteMetadata.author.location}`}
+                content={`${data.site.siteMetadata.author.fullName} - a software engineer in ${data.site.siteMetadata.author.location}`}
             />
         </Helmet>
     )
