@@ -1,9 +1,9 @@
 ---
-type: post
+type: project
 path: /projects/sudoku-solver
-title: Sudoku Solver
+title: sudoku-solver
 date: 2020-02-20T21:27:44.894Z
-description: DFS recursive backtracking to solve a Sudoku puzzle
+description: depth-first-search recursive backtracking visualization of solving dynamic sudoku boards
 featuredImage: /img/sudoku-solver.png
 tags:
     - dfs

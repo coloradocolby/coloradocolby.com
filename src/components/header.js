@@ -50,9 +50,7 @@ const Header = ({ theme }) => {
         }
     `)
     return (
-        <header
-        // className={headerStyles.header}
-        >
+        <header className="pb-12">
             <h1
                 style={{
                     position: "absolute",

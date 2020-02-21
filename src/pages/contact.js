@@ -88,10 +88,13 @@ class ContactPage extends Component {
             <>
                 <Head title="Contact" />
                 <Layout>
-                    <div className="mt-12 flex justify-center">
+                    <div className="flex justify-center">
                         <div class="w-full">
-                            <h3 className="text-xl">
-                                <a href="https://twitter.com/messages/compose?recipient_id=4227576672">
+                            <h3 className="text-xl mb-6">
+                                <a
+                                    href="https://twitter.com/messages/compose?recipient_id=4227576672"
+                                    className="text-indigo-700"
+                                >
                                     @coloradocolby
                                 </a>{" "}
                                 on twitter or fill out the form below
@@ -133,7 +136,7 @@ class ContactPage extends Component {
                                             Name
                                         </label> */}
                                         <input
-                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             id="name"
                                             type="text"
                                             name="name"
@@ -150,7 +153,7 @@ class ContactPage extends Component {
                                             Email
                                         </label> */}
                                         <input
-                                            className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white ${!validEmail &&
+                                            className={`appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white ${!validEmail &&
                                                 "border-red-500"}`}
                                             id="email"
                                             type="email"
@@ -177,7 +180,7 @@ class ContactPage extends Component {
                                             message
                                         </label> */}
                                         <textarea
-                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight  shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             placeholder="Great website!"
                                             name="message"
                                             type="text"

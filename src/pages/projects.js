@@ -1,76 +1,73 @@
-import React, { Component } from "react"
+import React from "react"
+import { Link, useStaticQuery, graphql } from "gatsby"
+
 import Layout from "../components/layout"
-import fetch from "node-fetch"
 import Head from "../components/head"
 import ProjectCard from "../components/project-card"
-import Loader from "../components/loader"
 
-export default class ProjectsPage extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            repos: [],
-        }
-    }
-
-    getGithubRepos() {
-        return new Promise(async resolve => {
-            let repos = await fetch(
-                "https://api.github.com/users/coloradocolby/repos?sort=updated",
-                {
-                    headers: {
-                        Accept: "application/vnd.github.mercy-preview+json", // allows us to see topics
-                    },
+const ProjectPage = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allMarkdownRemark(
+                filter: { frontmatter: { type: { eq: "project" } } }
+            ) {
+                edges {
+                    node {
+                        frontmatter {
+                            title
+                            path
+                            date(formatString: "MMMM DD, YYYY")
+                            featuredImage {
+                                childImageSharp {
+                                    # Specify the image processing specifications right in the query.
+                                    fixed(height: 300) {
+                                        ...GatsbyImageSharpFixed
+                                    }
+                                }
+                            }
+                            description
+                            tags
+                        }
+                    }
                 }
-            )
-            repos = await repos.json()
-            setTimeout(() => {
-                this.setState({
-                    repos,
-                })
-                resolve()
-            }, 500)
-            // always show loader for at least half a second,
-            //otherwise it's jarring if result is cached already
-        })
-    }
-    async componentDidMount() {
-        await this.getGithubRepos()
-    }
+            }
+        }
+    `)
 
-    render() {
-        const { repos } = this.state
-        return (
-            <>
-                <Head title="Projects" />
-                <Layout>
-                    {repos.length === 0 ? (
-                        <Loader />
-                    ) : (
-                        repos.map(repo => {
-                            if (
-                                repo.topics &&
-                                repo.topics.length &&
-                                repo.topics.includes("skrrrt")
-                            ) {
-                                return (
+    return (
+        <>
+            <Head title="Posts" />
+            <Layout>
+                <div className="flex flex-col md:flex-row">
+                    {data.allMarkdownRemark.edges.map(edge => {
+                        const {
+                            path,
+                            title,
+                            date,
+                            featuredImage,
+                            description,
+                            tags,
+                        } = edge.node.frontmatter
+                        return (
+                            <div className="w-full md:w-1/2">
+                                <Link to={`${path}`} key={path}>
                                     <ProjectCard
-                                        key={repo.id}
-                                        name={repo.name}
-                                        desc={repo.description}
-                                        createdAt={repo.created_at}
-                                        htmlUrl={repo.html_url}
-                                        topics={repo.topics.filter(
-                                            t => t !== "skrrrt"
-                                        )}
-                                    />
-                                )
-                            } else return null
-                        })
-                    )}
-                </Layout>
-            </>
-        )
-    }
+                                        title={title}
+                                        date={date}
+                                        featuredImage={
+                                            featuredImage?.childImageSharp.fluid
+                                        }
+                                        description={description}
+                                        tags={tags}
+                                    ></ProjectCard>
+                                </Link>
+                            </div>
+                        )
+                    })}
+                </div>
+            </Layout>
+        </>
+    )
 }
+
+export default ProjectPage

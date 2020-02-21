@@ -1,19 +1,14 @@
 import React from "react"
-import { Title, Subtitle, CustomCard } from "./styled"
-import Img from "gatsby-image" // example usage below
-
-export default ({ title, featuredImage, date }) => (
-    <CustomCard className={`card`}>
-        <div className="card-image">
-            <Img fluid={featuredImage} alt={title} className="is-square" />
+import moment from "moment"
+import Img from "gatsby-image"
+export default ({ title, date, featuredImage }) => (
+    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <Img class="w-full" fluid={featuredImage} alt={title} />
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">{title}</div>
+            <p class="text-gray-700 text-base text-xs tracking-narrow lowercase font-bold">
+                {moment(date).fromNow()}
+            </p>
         </div>
-        <div className="card-content">
-            <div className="media">
-                <div className="media-content is-clipped p-sm">
-                    <Title className="title is-4">{title}</Title>
-                    <Subtitle className="subtitle is-6">{date}</Subtitle>
-                </div>
-            </div>
-        </div>
-    </CustomCard>
+    </div>
 )

@@ -5,7 +5,7 @@ import Img from "gatsby-image" // example usage below
 import Head from "../components/head"
 import Layout from "../components/layout"
 
-import { Title, Subtitle } from "../components/styled"
+import { ThemedDiv } from "../components/styled"
 // import "prismjs/themes/prism-tomorrow.css" // for code highlighting
 import { withTheme } from "styled-components"
 
@@ -27,11 +27,16 @@ const ContentTemplate = ({
         <>
             <Head title={frontmatter.title} />
             <Layout>
-                <Title className="title">{frontmatter.title}</Title>
-                <Subtitle className="subtitle">{frontmatter.date}</Subtitle>
-                <div className="content">
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
-                </div>
+                <ThemedDiv className="text-4xl font-bold">
+                    {frontmatter.title}
+                </ThemedDiv>
+                <ThemedDiv className="text-2xl font-semibold">
+                    {frontmatter.date}
+                </ThemedDiv>
+                <ThemedDiv
+                    className="mt-6"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                />
             </Layout>
         </>
     )

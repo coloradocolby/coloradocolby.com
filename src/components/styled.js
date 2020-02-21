@@ -64,6 +64,7 @@ const whiteWithTransition = styled.div`
 export const Title = whiteWithTransition
 export const Subtitle = whiteWithTransition
 export const Cta = whiteWithTransition
+export const ThemedDiv = whiteWithTransition
 export const P = whiteWithTransition
 export const SocialIcon = styled.div`
     transition: all 0.5s ease-in-out;

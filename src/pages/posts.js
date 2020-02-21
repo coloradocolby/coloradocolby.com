@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Head from "../components/head"
-import PostsCard from "../components/post-card"
+import PostCard from "../components/post-card"
 
 const PostsPage = () => {
     const data = useStaticQuery(graphql`
@@ -32,6 +32,7 @@ const PostsPage = () => {
         }
     `)
 
+    console.log("posts data", data)
     return (
         <>
             <Head title="Posts" />
@@ -44,14 +45,14 @@ const PostsPage = () => {
                                     to={`${edge.node.frontmatter.path}`}
                                     key={edge.node.frontmatter.path}
                                 >
-                                    <PostsCard
+                                    <PostCard
                                         title={edge.node.frontmatter.title}
                                         date={edge.node.frontmatter.date}
                                         featuredImage={
                                             edge.node.frontmatter.featuredImage
                                                 .childImageSharp.fluid
                                         }
-                                    ></PostsCard>
+                                    ></PostCard>
                                 </Link>
                             </div>
                         )
