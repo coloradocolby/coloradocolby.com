@@ -18,15 +18,7 @@ const Ago = styled.div.attrs({
     transition: color 0.5s ease-in-out;
 `
 
-const ProjectCard = ({
-    theme,
-    title,
-    date,
-    featuredImage,
-    tags,
-    description,
-}) => {
-    console.log("fi", featuredImage)
+const ProjectCard = ({ title, date, tags, description }) => {
     return (
         <div className="shadow-lg rounded-lg m-3 lift-on-hover">
             <div className="px-6 py-4">
