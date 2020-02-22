@@ -56,7 +56,7 @@ export const HeaderTitle = styled.p`
     }
 `
 
-const whiteWithTransition = styled.div`
+export const whiteWithTransition = styled.div`
     transition: all 0.5s ease-in-out;
     color: ${textColor};
 `

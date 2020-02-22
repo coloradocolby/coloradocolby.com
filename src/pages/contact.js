@@ -194,7 +194,8 @@ class ContactPage extends Component {
                                 </div>
                                 <div class="flex items-center justify-end">
                                     <button
-                                        class="bg-primary-500 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                        class={`bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!validForm &&
+                                            "opacity-50 cursor-not-allowed"}`}
                                         type="button"
                                         disabled={!validForm}
                                     >

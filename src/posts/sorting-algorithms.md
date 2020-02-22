@@ -10,7 +10,11 @@ tags:
     - asymptotic time
 ---
 
-## A collection of Sorting Algorithms
+_A collection of Sorting Algorithms_
+
+# Test
+
+## Test
 
 ```javascript
 /*** BUBBLE SORT ***/

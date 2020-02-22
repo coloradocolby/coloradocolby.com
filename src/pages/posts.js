@@ -17,14 +17,7 @@ const PostsPage = () => {
                             title
                             path
                             date(formatString: "MMMM DD, YYYY")
-                            featuredImage {
-                                childImageSharp {
-                                    # Specify the image processing specifications right in the query.
-                                    fluid {
-                                        ...GatsbyImageSharpFluid
-                                    }
-                                }
-                            }
+                            description
                         }
                     }
                 }
@@ -48,9 +41,8 @@ const PostsPage = () => {
                                     <PostCard
                                         title={edge.node.frontmatter.title}
                                         date={edge.node.frontmatter.date}
-                                        featuredImage={
-                                            edge.node.frontmatter.featuredImage
-                                                .childImageSharp.fluid
+                                        description={
+                                            edge.node.frontmatter.description
                                         }
                                     ></PostCard>
                                 </Link>

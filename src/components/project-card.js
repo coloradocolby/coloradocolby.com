@@ -12,7 +12,7 @@ const Title = styled.div.attrs({
     transition: color 0.5s ease-in-out;
 `
 const Ago = styled.div.attrs({
-    className: "text-base text-xs tracking-narrow font-bold",
+    className: "text-xs tracking-narrow font-bold",
 })`
     color: ${textColor};
     transition: color 0.5s ease-in-out;
