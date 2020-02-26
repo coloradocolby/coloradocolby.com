@@ -4,7 +4,6 @@ path: /projects/maze-walker
 title: maze-walker
 date: 2020-02-10T21:27:44.894Z
 description: two-dimensional maze generation and solving visualization
-featuredImage: /img/maze-walker.png
 tags:
     - dfs
     - backtracking

@@ -4,7 +4,6 @@ path: /posts/sorting-algorithms
 date: 2020-01-26T04:40:57.521Z
 title: Sorting Algorithms
 description: All sorts of sorting algorithms
-featuredImage: /img/sorting.jpg
 tags:
     - sorting
     - asymptotic time

@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 
@@ -48,14 +49,6 @@ export const pageQuery = graphql`
                 date(formatString: "MMMM DD, YYYY")
                 path
                 title
-                featuredImage {
-                    childImageSharp {
-                        # Specify the image processing specifications right in the query.
-                        fluid {
-                            ...GatsbyImageSharpFluid
-                        }
-                    }
-                }
             }
         }
     }
