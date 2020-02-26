@@ -13,7 +13,7 @@ const CustomLinkWrapper = styled.div`
     padding-top: 2rem;
     justify-content: space-between;
 
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: 1200px) {
         padding: 0;
         justify-content: space-between;
     }
@@ -31,7 +31,7 @@ const CustomLink = styled.div`
         color: ${hoverColor};
     }
 
-    @media only screen and (min-width: 1000px) {
+    @media only screen and (min-width: 1200px) {
         font-size: 1.5rem;
         font-weight: normal;
         padding-top: 0.4rem;

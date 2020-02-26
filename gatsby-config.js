@@ -55,7 +55,7 @@ module.exports = {
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/src/img`,
+                path: `${__dirname}/src/images`,
                 name: `images`,
             },
         },
@@ -147,6 +147,18 @@ module.exports = {
                         },
                     },
                 ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+                name: `colby.sh`,
+                short_name: `colby.sh`,
+                start_url: `/`,
+                background_color: `#f7f0eb`,
+                theme_color: `#a2466c`,
+                display: `standalone`,
+                icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
             },
         },
         `gatsby-plugin-netlify-cms`, // make sure this is last
