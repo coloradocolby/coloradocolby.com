@@ -1,9 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import Head from "../components/head"
+import SEO from "../components/seo"
 import ProjectCard from "../components/project-card"
 
 const ProjectPage = () => {
@@ -29,7 +28,7 @@ const ProjectPage = () => {
 
     return (
         <>
-            <Head title="Posts" />
+            <SEO title="projects" />
             <Layout>
                 <div className="flex flex-col">
                     {data.allMarkdownRemark.edges.map(edge => {

@@ -1,6 +1,5 @@
 import React from "react"
 import moment from "moment"
-import Img from "gatsby-image"
 import styled, { withTheme } from "styled-components"
 import { textColor } from "../theme"
 import { P } from "../components/styled"

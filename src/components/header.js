@@ -2,12 +2,12 @@ import React from "react"
 import { useTheme } from "../contexts/ThemeContext"
 import styled, { withTheme } from "styled-components"
 import { Link, graphql, useStaticQuery } from "gatsby"
-// import headerStyles from "./header.module.scss"
 import { Moon, Sun } from "react-feather"
 import { ThemeTogglerWrapper, HeaderTitle } from "./styled"
 import { textColor, hoverColor } from "../theme"
 
 const CustomLinkWrapper = styled.div`
+    color: ${textColor};
     display: flex;
     margin: 0;
     padding-top: 2rem;
@@ -20,7 +20,6 @@ const CustomLinkWrapper = styled.div`
 `
 
 const CustomLink = styled.div`
-    color: ${textColor};
     font-size: 1rem;
     padding-top: 1rem;
     font-weight: bold;
@@ -50,7 +49,7 @@ const Header = ({ theme }) => {
         }
     `)
     return (
-        <header className="pb-12">
+        <header className="mb-12">
             <h1
                 style={{
                     position: "absolute",
@@ -65,28 +64,16 @@ const Header = ({ theme }) => {
             </h1>
             <nav>
                 <CustomLinkWrapper>
-                    <Link
-                        to="/"
-                        // activeClassName={headerStyles.activeNavItem}
-                    >
+                    <Link to="/" activeClassName="underline">
                         <CustomLink>home</CustomLink>
                     </Link>
-                    <Link
-                        to="/projects/"
-                        // activeClassName={headerStyles.activeNavItem}
-                    >
+                    <Link to="/projects" activeClassName="underline">
                         <CustomLink>projects</CustomLink>
                     </Link>
-                    <Link
-                        to="/posts/"
-                        // activeClassName={headerStyles.activeNavItem}
-                    >
+                    <Link to="/posts" activeClassName="underline">
                         <CustomLink>posts</CustomLink>
                     </Link>
-                    <Link
-                        to="/contact/"
-                        // activeClassName={headerStyles.activeNavItem}
-                    >
+                    <Link to="/contact" activeClassName="underline">
                         <CustomLink>contact</CustomLink>
                     </Link>
                     <div
@@ -100,7 +87,7 @@ const Header = ({ theme }) => {
                             {theme.mode === "light" ? (
                                 <Moon
                                     onClick={() => themeToggle.toggle()}
-                                    style={{ color: "black" }}
+                                    style={{ color: "#333333" }}
                                 />
                             ) : (
                                 <Sun onClick={() => themeToggle.toggle()} />

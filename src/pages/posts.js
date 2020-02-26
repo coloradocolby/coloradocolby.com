@@ -2,7 +2,7 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Head from "../components/head"
+import SEO from "../components/seo"
 import PostCard from "../components/post-card"
 
 const PostsPage = () => {
@@ -25,10 +25,9 @@ const PostsPage = () => {
         }
     `)
 
-    console.log("posts data", data)
     return (
         <>
-            <Head title="Posts" />
+            <SEO title="posts" />
             <Layout>
                 <div className="columns is-multiline">
                     {data.allMarkdownRemark.edges.map(edge => {

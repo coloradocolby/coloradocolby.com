@@ -1,8 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image" // example usage below
-
-import Head from "../components/head"
+import SEO from "../components/seo"
 import Layout from "../components/layout"
 
 import { ThemedDiv } from "../components/styled"
@@ -25,7 +23,7 @@ const ContentTemplate = ({
 
     return (
         <>
-            <Head title={frontmatter.title} />
+            <SEO title={frontmatter.title} />
             <Layout>
                 <ThemedDiv className="text-4xl font-bold">
                     {frontmatter.title}

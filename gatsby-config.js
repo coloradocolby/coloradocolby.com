@@ -8,12 +8,15 @@ module.exports = {
     /* Your site config here */
     siteMetadata: {
         title: "colby.sh",
-        site: "colby.🤫",
+        site: "colby.sh",
         author: {
             name: "colby",
-            fullName: "colby thomas",
-            location: "dallas",
+            location: "seattle",
         },
+        url: "https://colby.sh",
+        image: "/img/colby.jpg",
+        description: "a software engineer in seattle",
+        twitterUsername: "@coloradocolby",
     },
     plugins: [
         {

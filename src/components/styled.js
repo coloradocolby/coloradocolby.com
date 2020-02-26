@@ -66,12 +66,18 @@ export const Subtitle = whiteWithTransition
 export const Cta = whiteWithTransition
 export const ThemedDiv = whiteWithTransition
 export const P = whiteWithTransition
+
 export const SocialIcon = styled.div`
     transition: all 0.5s ease-in-out;
     color: ${textColor};
     &:hover {
         color: ${hoverColor};
     }
+`
+
+export const Span = styled.span`
+    transition: all 0.5s ease-in-out;
+    color: ${textColor};
 `
 
 export const Intro = styled.div`

@@ -29,6 +29,7 @@ h6 {
 html {
     overflow-y: scroll;
 }
+
 html,
 body {
     margin: 0;
@@ -38,45 +39,15 @@ body {
     font-family: "Nunito", serif;
 }
 
-.loader-hidden {
-    display: none;
-}
-.loader-active {
-    display: block;
-}
-
 pre {
     box-shadow: 0 2px 4px rgba(10, 10, 10, 0.15);
     border-radius: 10px;
-    font-size: 0.8em !important;
 }
-
-/* // bulma overrides */
-.number,
-.loader {
-    /* // styles from Bulma that I don't want */
-    all: unset;
-}
-
-.custom-card {
-    background: rgba(255, 255, 255, 0.07);
-    color: #ffffff;
-    font-weight: bold;
-    transition: all 0.5s ease-in-out;
-
-    border-radius: 10px;
-}
-
-.custom-card:hover {
-}
-
-/* a:hover {
-    color: lighten($link, 5%);
-} */
 
 .lift-on-hover {
     transition: all 0.1s ease-in-out;
 }
+
 .lift-on-hover:hover {
     transform: translateY(-0.1rem);
 }
