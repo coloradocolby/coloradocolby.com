@@ -73,7 +73,6 @@ class ContactPage extends Component {
                 validator.isEmail(email) &&
                 message.length > 0,
         })
-        console.log("this.state", this.state)
     }
 
     render() {
@@ -83,7 +82,7 @@ class ContactPage extends Component {
             <>
                 <SEO title="contact" />
                 <Layout>
-                    <div className=" w-full flex justify-center flex-col items-center">
+                    <div className="w-full flex justify-center flex-col items-center">
                         <div className="w-full max-w-2xl">
                             <h3 className="text-xl mb-6 self-start">
                                 <a
