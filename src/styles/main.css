@@ -51,3 +51,7 @@ pre {
 .lift-on-hover:hover {
     transform: translateY(-0.1rem);
 }
+
+.card {
+    background: rgba(68, 68, 68, 0.03);
+}

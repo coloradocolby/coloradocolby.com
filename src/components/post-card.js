@@ -19,7 +19,7 @@ const Ago = styled.div.attrs({
 
 const PostCard = ({ title, date, description }) => {
     return (
-        <div className="shadow-lg rounded-lg m-3 lift-on-hover">
+        <div className="card shadow-lg rounded-lg m-3 lift-on-hover">
             <div className="px-6 py-4">
                 <div className="flex flex-col justify-center">
                     <Title>{title}</Title>

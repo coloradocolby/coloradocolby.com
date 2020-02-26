@@ -19,7 +19,7 @@ const Ago = styled.div.attrs({
 
 const ProjectCard = ({ title, date, tags, description }) => {
     return (
-        <div className="shadow-lg rounded-lg m-3 lift-on-hover">
+        <div className="card shadow-lg rounded-lg m-3 lift-on-hover">
             <div className="px-6 py-4">
                 <div className="flex flex-col lg:flex-row justify-between">
                     <div>
