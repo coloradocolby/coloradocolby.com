@@ -125,6 +125,7 @@ class ContactPage extends Component {
                                         <input
                                             id="name"
                                             type="text"
+                                            className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary"
                                             // className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             name="name"
                                             placeholder="joe sakic"
@@ -136,9 +137,8 @@ class ContactPage extends Component {
                                         <input
                                             id="email"
                                             name="email"
-                                            // className={`appearance-none block w-full bg-gray-200 text-gray-700 border-2 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white ${!validEmail &&
-                                            //     "border-red-500"}`}
-                                            type="email"
+                                            className={`bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary ${!validEmail &&
+                                                "border-red-500"}`}
                                             placeholder="joesakic@gmail.com"
                                             value={email}
                                             onChange={this.handleChange}
@@ -157,7 +157,7 @@ class ContactPage extends Component {
                                         <textarea
                                             id="message"
                                             name="message"
-                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-primary"
                                             type="text"
                                             rows="5"
                                             placeholder="message"
