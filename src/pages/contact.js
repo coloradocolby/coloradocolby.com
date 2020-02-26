@@ -122,16 +122,10 @@ class ContactPage extends Component {
                                 </div>
                                 <div className="flex flex-wrap -mx-3 mb-2">
                                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                                        {/* <label
-                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            htmlFor="grid-name"
-                                        >
-                                            Name
-                                        </label> */}
                                         <input
-                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             id="name"
                                             type="text"
+                                            // className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             name="name"
                                             placeholder="joe sakic"
                                             value={name}
@@ -139,19 +133,13 @@ class ContactPage extends Component {
                                         />
                                     </div>
                                     <div className="w-full md:w-1/2 px-3">
-                                        {/* <label
-                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            htmlFor="email"
-                                        >
-                                            Email
-                                        </label> */}
                                         <input
-                                            className={`appearance-none block w-full bg-gray-200 text-gray-700 border-2 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white ${!validEmail &&
-                                                " border-red-500"}`}
                                             id="email"
-                                            type="email"
                                             name="email"
-                                            placeholder="jsakic@gmail.com"
+                                            // className={`appearance-none block w-full bg-gray-200 text-gray-700 border-2 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white ${!validEmail &&
+                                            //     "border-red-500"}`}
+                                            type="email"
+                                            placeholder="joesakic@gmail.com"
                                             value={email}
                                             onChange={this.handleChange}
                                             onBlur={this.validateEmail}
@@ -166,17 +154,11 @@ class ContactPage extends Component {
                                 </div>
                                 <div className="flex flex-wrap -mx-3 mb-6">
                                     <div className="w-full px-3">
-                                        {/* <label
-                                            className="block lowercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                                            htmlFor="message"
-                                        >
-                                            message
-                                        </label> */}
                                         <textarea
-                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight  shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
-                                            name="message"
-                                            type="text"
                                             id="message"
+                                            name="message"
+                                            className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
+                                            type="text"
                                             rows="5"
                                             placeholder="message"
                                             value={message}
