@@ -96,7 +96,6 @@ class ContactPage extends Component {
                                 </Span>
                             </h3>
                             <form
-                                className=""
                                 name="contact-form"
                                 method="POST"
                                 data-netlify="true"
@@ -169,7 +168,7 @@ class ContactPage extends Component {
                                     <button
                                         class={`bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!validForm &&
                                             "opacity-50 cursor-not-allowed"}`}
-                                        type="button"
+                                        type="submit"
                                         disabled={!validForm}
                                     >
                                         submit
