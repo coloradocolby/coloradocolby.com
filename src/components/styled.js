@@ -14,7 +14,7 @@ export const ThemeTogglerWrapper = styled.div`
     }
 `
 export const CustomCard = styled.div`
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     background: rgba(255, 255, 255, 0.07);
     color: ${textColor};
     margin: 0 1rem;
@@ -30,7 +30,7 @@ export const CustomCard = styled.div`
     }
 `
 export const CardTop = styled.div`
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,7 +49,7 @@ export const HeaderTitle = styled.p`
     font-size: 1.5rem;
     text-decoration: none;
     font-weight: bold;
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
 
     &:hover {
         color: ${hoverColor};
@@ -57,7 +57,7 @@ export const HeaderTitle = styled.p`
 `
 
 export const whiteWithTransition = styled.div`
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     color: ${textColor};
 `
 
@@ -68,7 +68,7 @@ export const ThemedDiv = whiteWithTransition
 export const P = whiteWithTransition
 
 export const SocialIcon = styled.div`
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     color: ${textColor};
     &:hover {
         color: ${hoverColor};
@@ -76,7 +76,7 @@ export const SocialIcon = styled.div`
 `
 
 export const Span = styled.span`
-    transition: all 0.5s ease-in-out;
+    // transition: all 0.5s ease-in-out;
     color: ${textColor};
 `
 

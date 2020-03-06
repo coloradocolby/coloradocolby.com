@@ -24,7 +24,7 @@ const CustomLink = styled.div`
     padding-top: 1rem;
     font-weight: bold;
     text-align: center;
-    transition: color 0.5s ease-in-out;
+    // transition: color 0.5s ease-in-out;
 
     &:hover {
         color: ${hoverColor};

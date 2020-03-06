@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "build:styles": "npx tailwindcss build styles.css -o output.css",
-    "develop": "gatsby develop",
+    "build:styles": "npx tailwindcss build src/styles/main.css -o src/styles/tailwind.css",
+    "develop": "npm run build:styles && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

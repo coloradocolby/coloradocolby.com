@@ -6,35 +6,6 @@ import Layout from "../components/layout"
 
 import { Span } from "../components/styled"
 
-// const Input = styled.input`
-//     transition: background-color 0.5s ease-in-out;
-//     background: ${backgroundColor} !important;
-//     color: ${textColor} !important;
-//     border-color: rgba(255, 255, 255, 0.3);
-//     &:hover {
-//         border-color: #8a4d76;
-//     }
-
-//     &::placeholder {
-//         color: #bbbbbb;
-//     }
-// `
-
-// const TextArea = styled.textarea`
-//     transition: background-color 0.5s ease-in-out;
-//     background: ${backgroundColor} !important;
-//     color: ${textColor} !important;
-//     border-color: rgba(255, 255, 255, 0.3);
-
-//     &:hover {
-//         border-color: #8a4d76;
-//     }
-
-//     &::placeholder {
-//         color: #bbbbbb;
-//     }
-// `
-
 class ContactPage extends Component {
     constructor(props) {
         super(props)

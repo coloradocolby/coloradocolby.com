@@ -5,6 +5,11 @@ export const backgroundColor = theme("mode", {
     dark: "#35353B",
 })
 
+export const svgColor = theme("mode", {
+    light: "#c8c8c8",
+    dark: "#26272d",
+})
+
 export const textColor = theme("mode", {
     light: "#333333",
     dark: "#edf2f7",
