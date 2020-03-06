@@ -4,31 +4,13 @@ import styled, { withTheme } from "styled-components"
 import Header from "./header"
 import Footer from "./footer"
 // import layoutStyles from "./layout.module.scss"
-import { backgroundColor, svgColor } from "../theme"
+import { backgroundColor } from "../theme"
 
 const Main = styled.main`
     background: ${backgroundColor};
-    height: 100vh;
-    // transition: all 0.5s ease-in-out;
-    border-color: rgba(0, 0, 0, 0);
+    transition: all 0.5s ease-in-out;
     overflow-x: hidden;
     overflow-y: auto;
-    scrollbar-color: ${backgroundColor} ${svgColor};
-
-    &::-webkit-scrollbar {
-        width: 15px;
-    }
-
-    &::-webkit-scrollbar-track {
-        // transition: all 0.5s ease-in-out;
-        background: ${backgroundColor};
-    }
-    &::-webkit-scrollbar-thumb {
-        // transition: all 0.5s ease-in-out;
-        background-color: ${svgColor};
-        border-radius: 6px;
-        border: 3px solid ${backgroundColor};
-    }
 `
 
 const SVG_CONFIG = {
@@ -74,7 +56,7 @@ const Layout = props => {
                                         ? SVG_CONFIG.LIGHT
                                         : SVG_CONFIG.DARK
                                 }`,
-                                // transition: "all .5s ease-in-out",
+                                transition: "all .5s ease-in-out",
                             }}
                             className="curve"
                             d="M.5.5v508s364,107,996,92S2139,335,3010,297s991,54,991,54L4000.5.5Z"
