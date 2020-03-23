@@ -43,7 +43,11 @@ const IndexPage = () => {
                         </Subtitle>
                         <Cta className="text-xl sm:text-2xl">
                             have an idea?{" "}
-                            <Link to="/contact" className="text-primary">
+                            <Link
+                                to="/contact"
+                                className="text-primary"
+                                aria-label="hit me up"
+                            >
                                 hmu
                             </Link>
                         </Cta>

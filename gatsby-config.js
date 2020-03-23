@@ -17,8 +17,10 @@ module.exports = {
         image: "/img/colby.jpg",
         description: "a software engineer in seattle",
         twitterUsername: "@coloradocolby",
+        siteUrl: `https://colby.sh`,
     },
     plugins: [
+        `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-postcss`,
             options: {

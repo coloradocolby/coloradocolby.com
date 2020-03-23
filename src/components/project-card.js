@@ -28,16 +28,20 @@ const ProjectCard = ({ title, date, tags, description }) => {
                         <P>{description}</P>
                     </div>
                     <div>
-                        <div className="mt-2 flex flex-row flex-wrap lg:justify-end">
+                        <ul
+                            className="mt-2 flex flex-row flex-wrap lg:justify-end"
+                            aria-label="technologies used"
+                            role="group"
+                        >
                             {tags.map((t, i) => (
-                                <div
+                                <li
                                     key={i}
                                     className="bg-primary rounded-full px-3 py-1 text-2xs font-semibold tracking-wide text-gray-200 mr-1  mb-2"
                                 >
                                     {t}
-                                </div>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ import { Moon, Sun } from "react-feather"
 import { ThemeTogglerWrapper, HeaderTitle } from "./styled"
 import { textColor, hoverColor } from "../theme"
 
-const CustomLinkWrapper = styled.div`
+const Ul = styled.ul`
     color: ${textColor};
     display: flex;
     margin: 0;
@@ -19,7 +19,7 @@ const CustomLinkWrapper = styled.div`
     }
 `
 
-const CustomLink = styled.div`
+const Li = styled.li`
     font-size: 1rem;
     padding-top: 1rem;
     font-weight: bold;
@@ -50,7 +50,7 @@ const Header = ({ theme }) => {
     `)
     return (
         <header className="mb-12">
-            <h1
+            <div
                 style={{
                     position: "absolute",
                     top: "5px",
@@ -61,27 +61,38 @@ const Header = ({ theme }) => {
                 <Link to="/">
                     <HeaderTitle>{data.site.siteMetadata.site}</HeaderTitle>
                 </Link>
-            </h1>
+            </div>
             <nav>
-                <CustomLinkWrapper>
-                    <Link to="/" activeClassName="underline">
-                        <CustomLink>home</CustomLink>
-                    </Link>
-                    <Link to="/projects" activeClassName="underline">
-                        <CustomLink>projects</CustomLink>
-                    </Link>
-                    <Link to="/posts" activeClassName="underline">
-                        <CustomLink>posts</CustomLink>
-                    </Link>
-                    <Link to="/contact" activeClassName="underline">
-                        <CustomLink>contact</CustomLink>
-                    </Link>
+                <Ul>
+                    <Li>
+                        <Link to="/" activeClassName="underline">
+                            home
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to="/projects" activeClassName="underline">
+                            projects
+                        </Link>
+                    </Li>
+
+                    <Li>
+                        <Link to="/posts" activeClassName="underline">
+                            posts
+                        </Link>
+                    </Li>
+                    <Li>
+                        <Link to="/contact" activeClassName="underline">
+                            contact
+                        </Link>
+                    </Li>
+
                     <div
                         style={{
                             position: "absolute",
                             top: "10px",
                             right: "15px",
                         }}
+                        aria-hidden="true"
                     >
                         <ThemeTogglerWrapper>
                             {theme.mode === "light" ? (
@@ -94,7 +105,7 @@ const Header = ({ theme }) => {
                             )}
                         </ThemeTogglerWrapper>
                     </div>
-                </CustomLinkWrapper>
+                </Ul>
             </nav>
         </header>
     )

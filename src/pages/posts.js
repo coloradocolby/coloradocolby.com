@@ -29,10 +29,10 @@ const PostsPage = () => {
         <>
             <SEO title="posts" />
             <Layout>
-                <div className="columns is-multiline">
+                <ul className="columns is-multiline">
                     {data.allMarkdownRemark.edges.map(edge => {
                         return (
-                            <div className="column">
+                            <li className="column">
                                 <Link
                                     to={`${edge.node.frontmatter.path}`}
                                     key={edge.node.frontmatter.path}
@@ -45,10 +45,10 @@ const PostsPage = () => {
                                         }
                                     ></PostCard>
                                 </Link>
-                            </div>
+                            </li>
                         )
                     })}
-                </div>
+                </ul>
             </Layout>
         </>
     )

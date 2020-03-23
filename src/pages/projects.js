@@ -30,7 +30,7 @@ const ProjectPage = () => {
         <>
             <SEO title="projects" />
             <Layout>
-                <div className="flex flex-col">
+                <ul className="flex flex-col">
                     {data.allMarkdownRemark.edges.map(edge => {
                         const {
                             path,
@@ -40,7 +40,7 @@ const ProjectPage = () => {
                             tags,
                         } = edge.node.frontmatter
                         return (
-                            <div className="w-full">
+                            <li className="w-full">
                                 <Link to={`${path}`} key={path}>
                                     <ProjectCard
                                         title={title}
@@ -49,10 +49,10 @@ const ProjectPage = () => {
                                         tags={tags}
                                     ></ProjectCard>
                                 </Link>
-                            </div>
+                            </li>
                         )
                     })}
-                </div>
+                </ul>
             </Layout>
         </>
     )

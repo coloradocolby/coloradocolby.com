@@ -44,7 +44,7 @@ export const CardTop = styled.div`
     }
 `
 
-export const HeaderTitle = styled.p`
+export const HeaderTitle = styled.div`
     color: ${textColor};
     font-size: 1.5rem;
     text-decoration: none;

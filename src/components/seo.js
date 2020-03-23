@@ -27,6 +27,9 @@ const SEO = ({ title, description, image, pathname, article }) => (
                     <Helmet
                         title={seo.title}
                         titleTemplate={`${seo.title} · ${siteTitle}`}
+                        htmlAttributes={{
+                            lang: "en",
+                        }}
                     >
                         <meta name="description" content={seo.description} />
                         <meta name="image" content={seo.image} />
