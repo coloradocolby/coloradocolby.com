@@ -168,5 +168,15 @@ module.exports = {
         },
         `gatsby-plugin-netlify-cms`, // make sure this is last
         `gatsby-plugin-netlify`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                // The property ID; the tracking code won't be generated without it
+                trackingId: "UA-82777341-2",
+                // Defines where to place the tracking script - `true` in the head and `false` in the body
+                head: true,
+                anonymize: true,
+            },
+        },
     ],
 }
