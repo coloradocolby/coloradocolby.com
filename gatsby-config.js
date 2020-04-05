@@ -20,6 +20,15 @@ module.exports = {
         siteUrl: `https://colby.sh`,
     },
     plugins: [
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: "UA-82777341-2", // the property id
+                head: true, // place script in head
+                anonymize: true, // anonymize IPs
+                respectDNT: true, // respect users who have a do not track setup
+            },
+        },
         `gatsby-plugin-sitemap`,
         {
             resolve: `gatsby-plugin-postcss`,
@@ -168,15 +177,5 @@ module.exports = {
         },
         `gatsby-plugin-netlify-cms`, // make sure this is last
         `gatsby-plugin-netlify`,
-        {
-            resolve: `gatsby-plugin-google-analytics`,
-            options: {
-                // The property ID; the tracking code won't be generated without it
-                trackingId: "UA-82777341-2",
-                // Defines where to place the tracking script - `true` in the head and `false` in the body
-                head: true,
-                anonymize: true,
-            },
-        },
     ],
 }
