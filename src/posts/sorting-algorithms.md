@@ -17,7 +17,7 @@ _A collection of Sorting Algorithms_
 
 ```javascript
 /*** BUBBLE SORT ***/
-const bubbleSort = arr => {
+const bubbleSort = (arr) => {
     let offset = 1
     let isSorted = false
 
@@ -35,7 +35,7 @@ const bubbleSort = arr => {
 }
 
 /**_ SELECTION SORT _**/
-const selectionSort = arr => {
+const selectionSort = (arr) => {
     for (let i = 0; i < arr.length - 1; i++) {
         let minIdx = i
         for (let j = i + 1; j < arr.length; j++) {
@@ -49,7 +49,7 @@ const selectionSort = arr => {
 }
 
 /**_ INSERTION SORT _**/
-const insertionSort = arr => {
+const insertionSort = (arr) => {
     for (let i = 1; i < arr.length; i++) {
         let j = i
         while (j > 0 && arr[j] < arr[j - 1]) {
@@ -61,7 +61,7 @@ const insertionSort = arr => {
 }
 
 /**_ QUICK SORT _**/
-const quickSort = arr => {
+const quickSort = (arr) => {
     quickSortHelper(arr, 0, arr.length - 1)
     return arr
 }
@@ -91,7 +91,7 @@ const quickSortHelper = (arr, start, end) => {
 }
 
 /**_ MERGE SORT _**/
-const mergeSort = arr => {
+const mergeSort = (arr) => {
     if (arr.length <= 1) return arr
     const mid = Math.floor(arr.length / 2)
     const left = arr.slice(0, mid)

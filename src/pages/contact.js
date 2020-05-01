@@ -18,7 +18,7 @@ class ContactPage extends Component {
         }
     }
 
-    handleChange = e => {
+    handleChange = (e) => {
         this.setState(
             {
                 [e.target.name]: e.target.value,
@@ -97,7 +97,7 @@ class ContactPage extends Component {
                                             className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary"
                                             // className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
                                             name="name"
-                                            placeholder="joe sakic"
+                                            placeholder="name"
                                             value={name}
                                             onChange={this.handleChange}
                                         />
@@ -106,16 +106,18 @@ class ContactPage extends Component {
                                         <input
                                             id="email"
                                             name="email"
-                                            className={`bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary ${!validEmail &&
-                                                "border-red-500"}`}
-                                            placeholder="joesakic@gmail.com"
+                                            className={`bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary ${
+                                                !validEmail && "border-red-500"
+                                            }`}
+                                            placeholder="email"
                                             value={email}
                                             onChange={this.handleChange}
                                             onBlur={this.validateEmail}
                                         />
                                         <p
-                                            className={`text-red-500 text-xs font-bold font-italic ${validEmail &&
-                                                "invisible"}`}
+                                            className={`text-red-500 text-xs font-bold font-italic ${
+                                                validEmail && "invisible"
+                                            }`}
                                         >
                                             invalid email
                                         </p>
@@ -137,8 +139,10 @@ class ContactPage extends Component {
                                 </div>
                                 <div class="flex items-center justify-end">
                                     <button
-                                        class={`bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!validForm &&
-                                            "opacity-50 cursor-not-allowed"}`}
+                                        class={`bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${
+                                            !validForm &&
+                                            "opacity-50 cursor-not-allowed"
+                                        }`}
                                         type="submit"
                                         disabled={!validForm}
                                     >
