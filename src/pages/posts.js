@@ -30,7 +30,7 @@ const PostsPage = () => {
             <SEO title="posts" />
             <Layout>
                 <ul className="columns is-multiline">
-                    {data.allMarkdownRemark.edges.map((edge) => {
+                    {data.allMarkdownRemark.edges.map(edge => {
                         return (
                             <li className="column">
                                 <Link

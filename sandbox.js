@@ -1,4 +1,4 @@
-const worseBubbleSort = (arr) => {
+const worseBubbleSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         for (let j = 0; j < arr.length - i; j++) {
             if (arr[j] > arr[j + 1]) {
@@ -9,7 +9,7 @@ const worseBubbleSort = (arr) => {
     return arr
 }
 
-const bubbleSort = (arr) => {
+const bubbleSort = arr => {
     let offset = 1
     let isSorted = false
 
@@ -27,7 +27,7 @@ const bubbleSort = (arr) => {
     return arr
 }
 
-const selectionSort = (arr) => {
+const selectionSort = arr => {
     for (let i = 0; i < arr.length - 1; i++) {
         let min = i
         for (let j = i + 1; j < arr.length; j++) {
@@ -38,7 +38,7 @@ const selectionSort = (arr) => {
     return arr
 }
 
-const insertionSort = (arr) => {
+const insertionSort = arr => {
     for (let i = 1; i < arr.length; i++) {
         let j = i
         while (j > 0 && arr[j] < arr[j - 1]) {

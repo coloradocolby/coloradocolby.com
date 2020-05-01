@@ -31,7 +31,7 @@ const ProjectPage = () => {
             <SEO title="projects" />
             <Layout>
                 <ul className="flex flex-col">
-                    {data.allMarkdownRemark.edges.map((edge) => {
+                    {data.allMarkdownRemark.edges.map(edge => {
                         const {
                             path,
                             title,

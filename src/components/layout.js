@@ -34,7 +34,7 @@ const ShiftUp = styled.div`
     margin-top: -${SVG_CONFIG.SIZE};
 `
 
-const Layout = (props) => {
+const Layout = props => {
     if (props.theme?.mode) {
         return (
             <Main>
