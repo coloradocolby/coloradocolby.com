@@ -1,0 +1,8 @@
+{
+  "presets": [
+    // the following two presets are necessary for Jest to run correctly
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
