@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+@tailwind base;
+
+/* https://tailwindcss.com/docs/adding-base-styles/#using-css */
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+h4 {
+  @apply text-base;
+}
+h5 {
+  @apply text-sm;
+}
+h6 {
+  @apply text-xs;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-black;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root {
+  --scrollbarBG: #35353b;
+  --thumbBG: #26272d;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100%;
+  height: 100%;
+  font-family: 'Nunito', serif;
+}
+
+pre {
+  box-shadow: 0 2px 4px rgba(10, 10, 10, 0.15);
+  border-radius: 10px;
+}
+
+.lift-on-hover {
+  transition: all 0.1s ease-in-out;
+}
+
+.lift-on-hover:hover {
+  transform: translateY(-0.1rem);
+}
+
+.card {
+  background: rgba(68, 68, 68, 0.03);
+}

@@ -65,11 +65,6 @@ const Header = ({ theme }) => {
       <nav>
         <Ul>
           <Li>
-            <Link to="/" activeClassName="underline">
-              home
-            </Link>
-          </Li>
-          <Li>
             <Link to="/projects" activeClassName="underline">
               projects
             </Link>
