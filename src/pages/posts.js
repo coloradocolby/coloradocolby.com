@@ -30,11 +30,8 @@ const PostsPage = () => {
         <ul className="columns is-multiline">
           {data.allMarkdownRemark.edges.map(edge => {
             return (
-              <li className="column">
-                <Link
-                  to={`${edge.node.frontmatter.path}`}
-                  key={edge.node.frontmatter.path}
-                >
+              <li className="column" key={edge.node.frontmatter.path}>
+                <Link to={`${edge.node.frontmatter.path}`}>
                   <PostCard
                     title={edge.node.frontmatter.title}
                     date={edge.node.frontmatter.date}

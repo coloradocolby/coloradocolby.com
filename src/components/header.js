@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from '../contexts/ThemeContext'
 import styled, { withTheme } from 'styled-components'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { Moon, Sun } from 'react-feather'
+import { Moon, Sun, GitMerge, File, MessageCircle } from 'react-feather'
 import { ThemeTogglerWrapper, HeaderTitle } from './styled'
 import { textColor, hoverColor } from '../theme'
 
@@ -10,13 +10,8 @@ const Ul = styled.ul`
   color: ${textColor};
   display: flex;
   margin: 0;
-  padding-top: 2rem;
-  justify-content: space-between;
-
-  @media only screen and (min-width: 1200px) {
-    padding: 0;
-    justify-content: space-between;
-  }
+  justify-content: center;
+  padding-top: 0.25rem;
 `
 
 const Li = styled.li`
@@ -25,6 +20,7 @@ const Li = styled.li`
   font-weight: bold;
   text-align: center;
   transition: color 0.5s ease-in-out;
+  margin: 0 1em;
 
   &:hover {
     color: ${hoverColor};
@@ -33,7 +29,6 @@ const Li = styled.li`
   @media only screen and (min-width: 1200px) {
     font-size: 1.5rem;
     font-weight: normal;
-    padding-top: 0.4rem;
   }
 `
 
@@ -64,31 +59,27 @@ const Header = ({ theme }) => {
       </div>
       <nav>
         <Ul>
+          {[
+            {
+              link: '/projects',
+              icon: <GitMerge />,
+            },
+            {
+              link: '/posts',
+              icon: <File />,
+            },
+            {
+              link: '/contact',
+              icon: <MessageCircle />,
+            },
+          ].map(({ link, icon }) => (
+            <Li key={link}>
+              <Link to={link} activeClassName="underline">
+                {icon}
+              </Link>
+            </Li>
+          ))}
           <Li>
-            <Link to="/projects" activeClassName="underline">
-              projects
-            </Link>
-          </Li>
-
-          <Li>
-            <Link to="/posts" activeClassName="underline">
-              posts
-            </Link>
-          </Li>
-          <Li>
-            <Link to="/contact" activeClassName="underline">
-              contact
-            </Link>
-          </Li>
-
-          <div
-            style={{
-              position: 'absolute',
-              top: '10px',
-              right: '15px',
-            }}
-            aria-hidden="true"
-          >
             <ThemeTogglerWrapper>
               {theme.mode === 'light' ? (
                 <Moon
@@ -99,7 +90,7 @@ const Header = ({ theme }) => {
                 <Sun onClick={() => themeToggle.toggle()} />
               )}
             </ThemeTogglerWrapper>
-          </div>
+          </Li>
         </Ul>
       </nav>
     </header>

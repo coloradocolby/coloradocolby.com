@@ -38,8 +38,8 @@ const ProjectPage = () => {
               tags,
             } = edge.node.frontmatter
             return (
-              <li className="w-full">
-                <Link to={`${path}`} key={path}>
+              <li className="w-full" key={path}>
+                <Link to={`${path}`}>
                   <ProjectCard
                     title={title}
                     date={date}
