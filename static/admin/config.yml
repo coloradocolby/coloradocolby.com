@@ -11,9 +11,8 @@ collections:
     folder: src/posts
     create: true
     fields:
-      - { label: Type, name: type, widget: string, default: post }
-      - { label: Path, name: path, widget: string }
       - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
       - { label: Published Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
       - { label: Featured Image, name: featuredImage, widget: image }
@@ -25,12 +24,12 @@ collections:
     folder: src/projects
     create: true
     fields:
-      - { label: Type, name: type, widget: string, default: project }
-      - { label: Path, name: path, widget: string }
       - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
       - { label: Published Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
-      - { label: Featured Image, name: featuredImage, widget: image }
-      - { label: Body, name: body, widget: markdown }
       - { label: Tags, name: tags, widget: list }
       - { label: Repo Url, name: repoUrl, widget: string }
+      - { label: Deployed Url, name: deployedUrl, widget: string }
+      - { label: Featured Image, name: featuredImage, widget: image }
+      - { label: Body, name: body, widget: markdown }
