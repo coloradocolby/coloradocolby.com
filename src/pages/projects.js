@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Card from '../components/card'
+import ContentAwareLink from '../components/contentAwareLink'
 
 const ProjectPage = () => {
   const data = useStaticQuery(graphql`
@@ -43,14 +44,14 @@ const ProjectPage = () => {
             } = edge.node.frontmatter
             return (
               <li className="w-full" key={path}>
-                <Link to={deployedUrl || repoUrl || '/'}>
+                <ContentAwareLink to={deployedUrl || repoUrl || '/'}>
                   <Card
                     title={title}
                     date={date}
                     description={description}
                     tags={tags}
                   ></Card>
-                </Link>
+                </ContentAwareLink>
               </li>
             )
           })}
