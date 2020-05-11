@@ -11,19 +11,19 @@ collections:
     folder: src/posts
     create: true
     fields:
-      - { label: Type, name: type, widget: string, default: post }
+      - { label: Type, name: type, widget: string, default: project }
       - { label: Title, name: title, widget: string }
       - { label: Path, name: path, widget: string }
-      - { label: Published Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+      - { label: Tags, name: tags, widget: list }
       - {
           label: Featured Image,
           name: featuredImage,
           widget: image,
           required: false,
         }
-      - { label: Body, name: body, widget: markdown }
-      - { label: Tags, name: tags, widget: list }
+      - { label: Published Date, name: date, widget: datetime }
 
   - name: projects
     label: Projects
@@ -34,7 +34,7 @@ collections:
       - { label: Title, name: title, widget: string }
       - { label: Path, name: path, widget: string }
       - { label: Description, name: description, widget: string }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: markdown, required: false }
       - { label: Tags, name: tags, widget: list }
       - { label: Repo Url, name: repoUrl, widget: string, required: false }
       - {
