@@ -15,7 +15,12 @@ collections:
       - { label: Path, name: path, widget: string }
       - { label: Published Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
-      - { label: Featured Image, name: featuredImage, widget: image }
+      - {
+          label: Featured Image,
+          name: featuredImage,
+          widget: image,
+          required: false,
+        }
       - { label: Body, name: body, widget: markdown }
       - { label: Tags, name: tags, widget: list }
 
@@ -31,5 +36,10 @@ collections:
       - { label: Tags, name: tags, widget: list }
       - { label: Repo Url, name: repoUrl, widget: string }
       - { label: Deployed Url, name: deployedUrl, widget: string }
-      - { label: Featured Image, name: featuredImage, widget: image }
+      - {
+          label: Featured Image,
+          name: featuredImage,
+          widget: image,
+          required: false,
+        }
       - { label: Body, name: body, widget: markdown }
