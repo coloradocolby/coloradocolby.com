@@ -34,7 +34,7 @@ const IndexPage = () => {
       <Layout>
         <div className="flex flex-col lg:flex-row justify-between mb-24">
           <Intro>
-            <Title className="text-5xl font-semibold">
+            <Title className="text-5xl font-medium">
               hi, i'm {data.site.siteMetadata.author.name}
             </Title>
             <Subtitle className="text-3xl sm:text-4xl mb-5">

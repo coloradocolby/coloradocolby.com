@@ -1,17 +1,13 @@
 import styled from 'styled-components'
-import { textColor, hoverColor } from '../theme'
+import { textColor } from '../theme'
 
 export const ThemeTogglerWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
   font-size: 1.25em;
-  cursor: pointer;
   color: #d4d4d4;
-
-  &:hover {
-    color: ${hoverColor};
-  }
+  cursor: pointer;
 `
 export const CustomCard = styled.div`
   transition: all 0.5s ease-in-out;
@@ -58,9 +54,6 @@ export const P = whiteWithTransition
 export const SocialIcon = styled.div`
   transition: all 0.5s ease-in-out;
   color: ${textColor};
-  &:hover {
-    color: ${hoverColor};
-  }
 `
 
 export const Span = styled.span`
