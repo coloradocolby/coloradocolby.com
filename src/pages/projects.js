@@ -17,6 +17,8 @@ const ProjectPage = () => {
               date(formatString: "MMMM DD, YYYY")
               description
               tags
+              repoUrl
+              deployedUrl
             }
           }
         }
@@ -36,10 +38,12 @@ const ProjectPage = () => {
               date,
               description,
               tags,
+              deployedUrl,
+              repoUrl,
             } = edge.node.frontmatter
             return (
               <li className="w-full" key={path}>
-                <Link to={`${path}`}>
+                <Link to={deployedUrl || repoUrl || '/'}>
                   <Card
                     title={title}
                     date={date}
