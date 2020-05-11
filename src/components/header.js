@@ -18,8 +18,8 @@ const Li = styled.li`
   color: ${textColor};
   svg {
     stroke-width: 2.5px;
-    width: 75px;
-    height: 75px;
+    width: 30px;
+    height: 30px;
   }
 
   @media only screen and (min-width: 768px) {
