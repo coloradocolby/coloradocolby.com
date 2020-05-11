@@ -11,6 +11,7 @@ collections:
     folder: src/posts
     create: true
     fields:
+      - { label: Type, name: type, widget: string, default: post }
       - { label: Title, name: title, widget: string }
       - { label: Path, name: path, widget: string }
       - { label: Published Date, name: date, widget: datetime }
@@ -29,6 +30,7 @@ collections:
     folder: src/projects
     create: true
     fields:
+      - { label: Type, name: type, widget: string, default: project }
       - { label: Title, name: title, widget: string }
       - { label: Path, name: path, widget: string }
       - { label: Published Date, name: date, widget: datetime }
@@ -47,4 +49,4 @@ collections:
           widget: image,
           required: false,
         }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Cont, name: body, widget: markdown }
