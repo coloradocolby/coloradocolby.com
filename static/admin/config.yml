@@ -34,8 +34,13 @@ collections:
       - { label: Published Date, name: date, widget: datetime }
       - { label: Description, name: description, widget: string }
       - { label: Tags, name: tags, widget: list }
-      - { label: Repo Url, name: repoUrl, widget: string }
-      - { label: Deployed Url, name: deployedUrl, widget: string }
+      - { label: Repo Url, name: repoUrl, widget: string, required: false }
+      - {
+          label: Deployed Url,
+          name: deployedUrl,
+          widget: string,
+          required: false,
+        }
       - {
           label: Featured Image,
           name: featuredImage,
