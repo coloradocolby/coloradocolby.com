@@ -17,7 +17,7 @@ const Ago = styled.div.attrs({
   transition: color 0.5s ease-in-out;
 `
 
-const ProjectCard = ({ title, date, tags, description }) => {
+const Card = ({ title, date, tags = [], description }) => {
   return (
     <div className="card shadow-lg rounded-lg m-3 lift-on-hover">
       <div className="px-6 py-4">
@@ -27,7 +27,7 @@ const ProjectCard = ({ title, date, tags, description }) => {
             <Ago>{moment(date).fromNow()}</Ago>
             <P>{description}</P>
           </div>
-          {tags && (
+          {tags.length > 0 && (
             <div>
               <ul
                 className="mt-2 flex flex-row flex-wrap lg:justify-end"
@@ -51,4 +51,4 @@ const ProjectCard = ({ title, date, tags, description }) => {
   )
 }
 
-export default withTheme(ProjectCard)
+export default withTheme(Card)

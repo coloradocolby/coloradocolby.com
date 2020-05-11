@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import ProjectCard from '../components/project-card'
+import Card from '../components/card'
 
 const ProjectPage = () => {
   const data = useStaticQuery(graphql`
@@ -40,12 +40,12 @@ const ProjectPage = () => {
             return (
               <li className="w-full" key={path}>
                 <Link to={`${path}`}>
-                  <ProjectCard
+                  <Card
                     title={title}
                     date={date}
                     description={description}
                     tags={tags}
-                  ></ProjectCard>
+                  ></Card>
                 </Link>
               </li>
             )

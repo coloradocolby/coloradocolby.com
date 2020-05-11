@@ -3,7 +3,7 @@ import { useTheme } from '../contexts/ThemeContext'
 import styled, { withTheme } from 'styled-components'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { Moon, Sun, GitMerge, File, MessageCircle } from 'react-feather'
-import { ThemeTogglerWrapper, HeaderTitle } from './styled'
+import { ThemeTogglerWrapper } from './styled'
 import { textColor, hoverColor } from '../theme'
 
 const Ul = styled.ul`
@@ -11,12 +11,10 @@ const Ul = styled.ul`
   display: flex;
   margin: 0;
   justify-content: center;
-  padding-top: 0.25rem;
 `
 
 const Li = styled.li`
   font-size: 1rem;
-  padding-top: 1rem;
   font-weight: bold;
   text-align: center;
   transition: color 0.5s ease-in-out;
@@ -29,6 +27,18 @@ const Li = styled.li`
   @media only screen and (min-width: 1200px) {
     font-size: 1.5rem;
     font-weight: normal;
+  }
+`
+
+const HeaderTitle = styled.div`
+  color: ${textColor};
+  padding: 0.5rem 0;
+  font-size: 1.125rem;
+  font-weight: 900;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: ${hoverColor};
   }
 `
 
@@ -45,14 +55,7 @@ const Header = ({ theme }) => {
   `)
   return (
     <header className="mb-12">
-      <div
-        style={{
-          position: 'absolute',
-          top: '5px',
-          left: '15px',
-          fontSize: '.5em',
-        }}
-      >
+      <div className="text-center">
         <Link to="/">
           <HeaderTitle>{data.site.siteMetadata.site}</HeaderTitle>
         </Link>
@@ -74,9 +77,7 @@ const Header = ({ theme }) => {
             },
           ].map(({ link, icon }) => (
             <Li key={link}>
-              <Link to={link} activeClassName="underline">
-                {icon}
-              </Link>
+              <Link to={link}>{icon}</Link>
             </Li>
           ))}
           <Li>

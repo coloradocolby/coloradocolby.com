@@ -51,16 +51,6 @@ const IndexPage = () => {
               </Link>
             </Cta>
           </Intro>
-          {/* <div
-                        className="w-full self-center mt-6 lg:mx-12"
-                        style={{ maxWidth: "200px" }}
-                    >
-                        <Img
-                            className="shadow-xl rounded-full opacity-75"
-                            fluid={data.file.childImageSharp.fluid}
-                            alt="colby thomas"
-                        />
-                    </div> */}
         </div>
       </Layout>
     </>

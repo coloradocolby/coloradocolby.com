@@ -44,22 +44,6 @@ export const CardTop = styled.div`
   }
 `
 
-export const HeaderTitle = styled.div`
-  color: ${textColor};
-  padding-top: 0.75rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.5s ease-in-out;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 1.5rem;
-  }
-  &:hover {
-    color: ${hoverColor};
-  }
-`
-
 export const whiteWithTransition = styled.div`
   transition: all 0.5s ease-in-out;
   color: ${textColor};

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -17951,7 +17951,8 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
-  font-family: 'Nunito', serif;
+  overflow-x: hidden;
+  font-family: 'Rubik', serif;
 }
 
 pre {

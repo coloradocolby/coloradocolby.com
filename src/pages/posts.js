@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import PostCard from '../components/post-card'
+import Card from '../components/card'
 
 const PostsPage = () => {
   const data = useStaticQuery(graphql`
@@ -27,16 +27,16 @@ const PostsPage = () => {
     <>
       <SEO title="posts" />
       <Layout>
-        <ul className="columns is-multiline">
+        <ul className="flex flex-col">
           {data.allMarkdownRemark.edges.map(edge => {
             return (
               <li className="column" key={edge.node.frontmatter.path}>
                 <Link to={`${edge.node.frontmatter.path}`}>
-                  <PostCard
+                  <Card
                     title={edge.node.frontmatter.title}
                     date={edge.node.frontmatter.date}
                     description={edge.node.frontmatter.description}
-                  ></PostCard>
+                  ></Card>
                 </Link>
               </li>
             )

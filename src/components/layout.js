@@ -16,7 +16,7 @@ const Main = styled.main`
 const SVG_CONFIG = {
   SIZE: '700px',
   DARK: '#26272d',
-  LIGHT: '#c8c8c8',
+  LIGHT: '#e0e0e0',
 }
 
 const SVG = styled.svg`
@@ -62,7 +62,7 @@ const Layout = props => {
         </div>
 
         <ShiftUp>
-          <div className="min-h-screen flex flex-col px-10 max-w-screen-lg my-0 mx-auto">
+          <div className="min-h-screen flex flex-col px-10 max-w-screen-md my-0 mx-auto">
             <Header />
             <div className="flex-grow">{props.children}</div>
             <Footer />
