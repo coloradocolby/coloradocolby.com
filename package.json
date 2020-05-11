@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gatsby build",
     "style": "postcss src/styles/index.pcss -o src/styles/tailwind.css",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "lint": "eslint --fix .",
     "start": "npm run style && npm run develop",
     "serve": "gatsby serve",

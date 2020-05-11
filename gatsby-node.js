@@ -44,3 +44,32 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 exports.onCreateNode = ({ node }) => {
   fmImagesToRelative(node)
 }
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  // const typeDefs = `
+  //   type Project implements Node {
+
+  //   }
+  // `
+
+  const typeDefs = `
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      type: String!
+      title: String!
+      path: String!
+      description: String!
+      body: String!
+      tags: [String!]
+      repoUrl: String
+      deployedUrl: String
+      featuredImage: String
+      publishedDate: Date!
+    }
+  `
+
+  createTypes(typeDefs)
+}
