@@ -1,7 +1,7 @@
 ---
 type: project
-path: /projects/dad-jokes
 title: dad-jokes
+path: /projects/dad-jokes
 date: 2017-10-27T23:43:00.000Z
 description: text random dad jokes to any number
 tags:
