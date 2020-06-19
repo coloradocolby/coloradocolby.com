@@ -9,7 +9,10 @@ import ContentAwareLink from '../components/contentAwareLink'
 const ProjectPage = () => {
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { frontmatter: { type: { eq: "project" } } }) {
+      allMarkdownRemark(
+        filter: { frontmatter: { type: { eq: "project" } } }
+        sort: { fields: frontmatter___date, order: DESC }
+      ) {
         edges {
           node {
             frontmatter {
