@@ -1,8 +1,7 @@
 ---
 type: project
-path: /projects/nhl-tldr
 title: nhl-tldr
-date: 2017-10-27T23:43:00.000Z
+path: /projects/nhl-tldr
 description: nhl player stats for the lazies
 tags:
   - react
@@ -11,4 +10,5 @@ tags:
   - neumorphism
 repoUrl: https://github.com/coloradocolby/nhl-tldr
 deployedUrl: https://nhl-tldr-s464u.herokuapp.com
+date: 2020-02-27T20:00:00.000Z
 ---
