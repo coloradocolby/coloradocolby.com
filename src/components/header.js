@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from '../contexts/ThemeContext'
 import styled, { withTheme } from 'styled-components'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { Moon, Sun, GitMerge, File, MessageCircle } from 'react-feather'
+import { Moon, Sun, GitMerge, File, Feather } from 'react-feather'
 import { ThemeTogglerWrapper } from './styled'
 import { textColor } from '../theme'
 
@@ -16,6 +16,12 @@ const Li = styled.li`
   margin: 0.25em 0.5em;
   padding: 0.25em 0.5em;
   color: ${textColor};
+  transition: transform 0.25s ease-in-out;
+
+  &:hover {
+    transform: translateY(2px);
+  }
+
   svg {
     stroke-width: 2.5px;
     width: 30px;
@@ -39,7 +45,7 @@ const HeaderTitle = styled.div`
 `
 
 const Header = ({ theme }) => {
-  const themeToggle = useTheme()
+  const { toggle } = useTheme()
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -69,7 +75,7 @@ const Header = ({ theme }) => {
             },
             {
               link: '/contact',
-              icon: <MessageCircle />,
+              icon: <Feather />,
             },
           ].map(({ link, icon }) => (
             <Link to={link}>
@@ -77,7 +83,7 @@ const Header = ({ theme }) => {
             </Link>
           ))}
           <ThemeTogglerWrapper>
-            <Li onClick={() => themeToggle.toggle()}>
+            <Li onClick={() => toggle()}>
               {theme.mode === 'light' ? <Moon /> : <Sun />}
             </Li>
           </ThemeTogglerWrapper>

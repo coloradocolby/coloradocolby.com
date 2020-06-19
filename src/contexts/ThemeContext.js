@@ -23,11 +23,12 @@ export const MyThemeProvider = ({ children }) => {
   }
 
   // render both contexts, then Wrapper, then children
+  const { mode } = themeState
   return (
-    <ThemeToggleContext.Provider value={{ toggle: toggle }}>
+    <ThemeToggleContext.Provider value={{ toggle }}>
       <ThemeProvider
         theme={{
-          mode: themeState.mode,
+          mode,
         }}
       >
         {children}
