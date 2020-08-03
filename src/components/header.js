@@ -1,10 +1,10 @@
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useTheme } from '../contexts/ThemeContext'
+import { Feather, File, GitMerge, Moon, Sun } from 'react-feather'
 import styled, { withTheme } from 'styled-components'
-import { Link, graphql, useStaticQuery } from 'gatsby'
-import { Moon, Sun, GitMerge, File, Feather } from 'react-feather'
-import { ThemeTogglerWrapper } from './styled'
+import { useTheme } from '../contexts/ThemeContext'
 import { textColor } from '../theme'
+import { ThemeTogglerWrapper } from './styled'
 
 const Ul = styled.ul`
   display: flex;
@@ -16,11 +16,6 @@ const Li = styled.li`
   margin: 0.25em 0.5em;
   padding: 0.25em 0.5em;
   color: ${textColor};
-  transition: transform 0.25s ease-in-out;
-
-  &:hover {
-    transform: translateY(2px);
-  }
 
   svg {
     stroke-width: 2.5px;
@@ -41,7 +36,7 @@ const HeaderTitle = styled.div`
   padding-top: 0.5rem;
   font-size: 1.125rem;
   font-weight: 500;
-  transition: all 0.5s ease-in-out;
+  transition: all 200ms ease;
 `
 
 const Header = ({ theme }) => {

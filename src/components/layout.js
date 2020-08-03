@@ -1,14 +1,13 @@
 import React from 'react'
 import styled, { withTheme } from 'styled-components'
-
-import Header from './header'
-import Footer from './footer'
 // import layoutStyles from "./layout.module.scss"
 import { backgroundColor } from '../theme'
+import Footer from './footer'
+import Header from './header'
 
 const Main = styled.main`
   background: ${backgroundColor};
-  transition: all 0.5s ease-in-out;
+  transition: all 200ms ease;
   overflow-x: hidden;
   overflow-y: auto;
 `
@@ -53,7 +52,7 @@ const Layout = props => {
                     ? SVG_CONFIG.LIGHT
                     : SVG_CONFIG.DARK
                 }`,
-                transition: 'all .5s ease-in-out',
+                transition: 'all 200ms ease',
               }}
               className="curve"
               d="M.5.5v508s364,107,996,92S2139,335,3010,297s991,54,991,54L4000.5.5Z"

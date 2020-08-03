@@ -1,20 +1,20 @@
-import React from 'react'
 import moment from 'moment'
+import React from 'react'
 import styled, { withTheme } from 'styled-components'
-import { textColor } from '../theme'
 import { P } from '../components/styled'
+import { textColor } from '../theme'
 
 const Title = styled.div.attrs({
   className: 'font-bold text-2xl tracking-wide',
 })`
   color: ${textColor};
-  transition: color 0.5s ease-in-out;
+  transition: color 200ms ease;
 `
 const Ago = styled.div.attrs({
   className: 'text-xs tracking-narrow font-bold',
 })`
   color: ${textColor};
-  transition: color 0.5s ease-in-out;
+  transition: color 200ms ease;
 `
 
 const Card = ({ title, date, tags = [], description }) => {
