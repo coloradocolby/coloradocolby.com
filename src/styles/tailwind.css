@@ -17951,12 +17951,12 @@ pre {
   border-radius: 10px;
 }
 
-.lift-on-hover {
-  transition: all 0.25s ease-in-out;
+.scale-on-hover {
+  transition: all 200ms ease-in-out;
 }
 
-.lift-on-hover:hover {
-  transform: translateX(0.25rem);
+.scale-on-hover:hover {
+  transform: scale(1.02);
 }
 
 .card {

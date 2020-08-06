@@ -43,7 +43,7 @@ const IndexPage = () => {
               have an idea?{' '}
               <Link
                 to="/contact"
-                className="text-primary"
+                className="text-purple-600"
                 aria-label="hit me up"
               >
                 hmu

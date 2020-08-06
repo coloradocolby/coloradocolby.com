@@ -14,8 +14,8 @@ const Main = styled.main`
 
 const SVG_CONFIG = {
   SIZE: '700px',
-  DARK: '#26272d',
-  LIGHT: '#e0e0e0',
+  DARK: '#2d3748',
+  LIGHT: '#e2e8f0',
 }
 
 const SVG = styled.svg`
@@ -41,7 +41,6 @@ const Layout = props => {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            // overflow: "hidden",
           }}
         >
           <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4000 600">

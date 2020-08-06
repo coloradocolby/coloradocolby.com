@@ -9,22 +9,6 @@ export const ThemeTogglerWrapper = styled.div`
   color: #d4d4d4;
   cursor: pointer;
 `
-export const CustomCard = styled.div`
-  transition: all 200ms ease;
-  background: rgba(255, 255, 255, 0.07);
-  color: ${textColor};
-  margin: 0 1rem;
-
-  border-radius: 10px;
-
-  &:hover {
-    transform: translateX(0.1rem);
-  }
-
-  @media only screen and (min-width: 768px) {
-    margin: 0;
-  }
-`
 export const CardTop = styled.div`
   transition: all 200ms ease;
   display: flex;

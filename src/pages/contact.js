@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import validator from 'validator'
-
-import SEO from '../components/seo'
 import Layout from '../components/layout'
-
+import SEO from '../components/seo'
 import { Span } from '../components/styled'
 
 class ContactPage extends Component {
@@ -56,7 +54,7 @@ class ContactPage extends Component {
               <h3 className="text-xl mb-6 self-start">
                 <a
                   href="https://twitter.com/messages/compose?recipient_id=4227576672"
-                  className="text-primary"
+                  className="text-purple-600"
                 >
                   @coloradocolby
                 </a>{' '}
@@ -85,8 +83,8 @@ class ContactPage extends Component {
                     <input
                       id="name"
                       type="text"
-                      className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary"
-                      // className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-gray-500"
+                      className="bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 focus:outline-none focus:border-purple-600"
+                      // className="appearance-none block w-full bg-gray-200  border-2 border-gray-400 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:border-gray-500"
                       name="name"
                       placeholder="name"
                       value={name}
@@ -97,7 +95,7 @@ class ContactPage extends Component {
                     <input
                       id="email"
                       name="email"
-                      className={`bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700  focus:outline-none focus:bg-white focus:border-primary ${!validEmail &&
+                      className={`bg-gray-200 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4  focus:outline-none focus:border-purple-600 ${!validEmail &&
                         'border-red-500'}`}
                       placeholder="email"
                       value={email}
@@ -117,7 +115,7 @@ class ContactPage extends Component {
                     <textarea
                       id="message"
                       name="message"
-                      className="appearance-none block w-full bg-gray-200 text-gray-700 border-2 border-gray-200 rounded py-3 px-4 mb-3 shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:bg-white focus:border-primary"
+                      className="appearance-none block w-full bg-gray-200  border-2 border-gray-400 rounded py-3 px-4 mb-3 focus:outline-none focus:border-purple-600"
                       type="text"
                       rows="5"
                       placeholder="message"
@@ -128,7 +126,7 @@ class ContactPage extends Component {
                 </div>
                 <div class="flex items-center justify-end">
                   <button
-                    class={`bg-primary text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!validForm &&
+                    class={`bg-purple-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${!validForm &&
                       'opacity-50 cursor-not-allowed'}`}
                     type="submit"
                     disabled={!validForm}
