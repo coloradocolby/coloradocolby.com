@@ -1,10 +1,9 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-
-import Layout from '../components/layout'
-import SEO from '../components/seo'
 import Card from '../components/card'
 import ContentAwareLink from '../components/contentAwareLink'
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 
 const ProjectPage = () => {
   const data = useStaticQuery(graphql`
@@ -34,7 +33,7 @@ const ProjectPage = () => {
     <>
       <SEO title="projects" />
       <Layout>
-        <ul className="flex flex-col">
+        <ul className="flex flex-row flex-wrap">
           {data.allMarkdownRemark.edges.map(edge => {
             const {
               path,

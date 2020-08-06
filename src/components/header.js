@@ -1,6 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { Feather, File, GitMerge, Moon, Sun } from 'react-feather'
+import { AtSign, Bookmark, GitMerge, Home, Moon, Sun } from 'react-feather'
 import styled, { withTheme } from 'styled-components'
 import { useTheme } from '../contexts/ThemeContext'
 import { textColor } from '../theme'
@@ -52,25 +52,29 @@ const Header = ({ theme }) => {
   `)
   return (
     <header className="mb-12">
-      <div className="text-center">
+      {/* <div className="text-center">
         <Link to="/">
           <HeaderTitle>{data.site.siteMetadata.site}</HeaderTitle>
         </Link>
-      </div>
-      <nav>
+      </div> */}
+      <nav className="my-2">
         <Ul>
           {[
+            {
+              link: '/',
+              icon: <Home />,
+            },
             {
               link: '/projects',
               icon: <GitMerge />,
             },
             {
               link: '/posts',
-              icon: <File />,
+              icon: <Bookmark />,
             },
             {
               link: '/contact',
-              icon: <Feather />,
+              icon: <AtSign />,
             },
           ].map(({ link, icon }) => (
             <Link to={link}>

@@ -60,7 +60,7 @@ const Layout = props => {
         </div>
 
         <ShiftUp>
-          <div className="min-h-screen flex flex-col px-10 max-w-screen-md my-0 mx-auto">
+          <div className="min-h-screen flex flex-col px-10 max-w-screen-lg my-0 mx-auto">
             <Header />
             <div className="flex-grow">{props.children}</div>
             <Footer />
