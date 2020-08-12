@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 // define our toggle context, with a default empty toggle function

@@ -24,7 +24,7 @@ const Card = ({ title, date, tags = [], description }) => {
         <div className="flex flex-col lg:flex-row justify-between">
           <div>
             <Title>{title}</Title>
-            <Ago>{moment(date).fromNow()}</Ago>
+            <Ago>{moment(date, 'MMMM-DD-YYYY').fromNow()}</Ago>
             <P>{description}</P>
           </div>
           {tags.length > 0 && (

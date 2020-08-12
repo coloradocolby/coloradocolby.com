@@ -1,5 +1,5 @@
 import React from 'react'
-import { GitHub, Instagram, Twitter, Youtube, Linkedin } from 'react-feather'
+import { GitHub, Instagram, Linkedin, Twitter, Youtube } from 'react-feather'
 import { SocialIcon } from './styled'
 
 const Footer = () => {
@@ -61,7 +61,7 @@ const Footer = () => {
         <li className="mx-4">
           <a
             className="px-5"
-            href="https://www.linkedin.com/in/coloradocolby/"
+            href="https://www.linkedin.com/in/coloradocolby"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="linkedin account"

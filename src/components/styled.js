@@ -1,14 +1,6 @@
 import styled from 'styled-components'
 import { textColor } from '../theme'
 
-export const ThemeTogglerWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-  font-size: 1.25em;
-  color: #d4d4d4;
-  cursor: pointer;
-`
 export const CardTop = styled.div`
   transition: all 200ms ease;
   display: flex;
@@ -38,6 +30,10 @@ export const P = whiteWithTransition
 export const SocialIcon = styled.div`
   transition: all 200ms ease;
   color: ${textColor};
+
+  &:hover {
+    transform: translateY(1px);
+  }
 `
 
 export const Span = styled.span`

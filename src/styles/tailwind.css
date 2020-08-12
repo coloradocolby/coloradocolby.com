@@ -17963,6 +17963,16 @@ pre {
   background: rgba(68, 68, 68, 0.03);
 }
 
+.active-link-light li {
+  background: #edf2f7;
+  border-radius: 50%;
+}
+
+.active-link-dark li {
+  background: #4a5568;
+  border-radius: 50%;
+}
+
 @media (min-width: 640px){
   .sm\:space-y-0 > :not(template) ~ :not(template){
     --space-y-reverse: 0;
