@@ -1,4 +1,5 @@
 module.exports = {
+  experimental: 'all', // allows me to use @apply with variants and other complex classes
   prefix: '',
   important: false,
   separator: ':',

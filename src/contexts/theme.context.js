@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
 
 // define our toggle context, with a default empty toggle function
 const ThemeToggleContext = createContext({
@@ -25,16 +25,16 @@ export const MyThemeProvider = ({ children }) => {
   // render both contexts, then Wrapper, then children
   const { mode } = themeState
   return (
-    <ThemeToggleContext.Provider value={{ toggle }}>
-      <ThemeProvider
+    <ThemeToggleContext.Provider value={{ toggle, mode }}>
+      <StyledComponentsThemeProvider
         theme={{
           mode,
         }}
       >
         {children}
-      </ThemeProvider>
+      </StyledComponentsThemeProvider>
     </ThemeToggleContext.Provider>
   )
 }
 
-export default ThemeProvider
+export default StyledComponentsThemeProvider

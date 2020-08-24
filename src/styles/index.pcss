@@ -58,11 +58,19 @@ pre {
 }
 
 .active-link-light li {
-  background: #edf2f7; // should match value in theme.js
+  background: #edf2f7; /* should match value in theme.js */
   border-radius: 50%;
 }
 
 .active-link-dark li {
-  background: #4a5568; // should match value in theme.js
+  background: #4a5568; /* should match value in theme.js */
   border-radius: 50%;
+}
+
+.input {
+  @apply bg-gray-800 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 focus:outline-none focus:border-purple-600;
+}
+
+.dark-input {
+  @apply bg-gray-800 appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 focus:outline-none focus:border-purple-600;
 }

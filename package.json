@@ -58,7 +58,7 @@
     "postcss-cli": "^7.1.1",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
-    "tailwindcss": "^1.2.0"
+    "tailwindcss": "^1.7.0"
   },
   "browserslist": [
     ">0.2%",

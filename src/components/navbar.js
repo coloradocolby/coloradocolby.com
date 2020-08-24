@@ -1,8 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { AtSign, Bookmark, GitMerge, Home, Moon, Sun } from 'react-feather'
+import { Bookmark, Feather, GitMerge, Home, Moon, Sun } from 'react-feather'
 import styled, { withTheme } from 'styled-components'
-import { useTheme } from '../contexts/ThemeContext'
+import { useTheme } from '../contexts/theme.context'
 import { backgroundColor, textColor } from '../theme'
 
 const Ul = styled.ul`
@@ -32,7 +32,7 @@ const Li = styled.li`
   }
 `
 
-const Header = ({ theme }) => {
+const Navbar = ({ theme }) => {
   const { toggle } = useTheme()
 
   return (
@@ -54,7 +54,7 @@ const Header = ({ theme }) => {
             },
             {
               link: '/contact/',
-              icon: <AtSign />,
+              icon: <Feather />,
             },
           ].map(({ link, icon }) => (
             <Link
@@ -74,4 +74,4 @@ const Header = ({ theme }) => {
   )
 }
 
-export default withTheme(Header)
+export default withTheme(Navbar)

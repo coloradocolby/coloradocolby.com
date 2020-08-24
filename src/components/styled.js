@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { textColor } from '../theme'
+import { backgroundColor, textColor } from '../theme'
 
 export const CardTop = styled.div`
   transition: all 200ms ease;
@@ -47,4 +47,14 @@ export const Intro = styled.div`
   @media only screen and (min-width: 1000px) {
     margin-top: 3em;
   }
+`
+
+export const Input = styled.input`
+  background: ${backgroundColor};
+  color: ${textColor};
+`
+
+export const Textarea = styled.textarea`
+  background: ${backgroundColor};
+  color: ${textColor};
 `

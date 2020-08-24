@@ -3,7 +3,7 @@ import styled, { withTheme } from 'styled-components'
 // import layoutStyles from "./layout.module.scss"
 import { backgroundColor } from '../theme'
 import Footer from './footer'
-import Header from './header'
+import Navbar from './navbar'
 
 const Main = styled.main`
   background: ${backgroundColor};
@@ -61,7 +61,7 @@ const Layout = props => {
 
         <ShiftUp>
           <div className="min-h-screen flex flex-col px-10 max-w-screen-lg my-0 mx-auto">
-            <Header />
+            <Navbar />
             <div className="flex-grow">{props.children}</div>
             <Footer />
           </div>
