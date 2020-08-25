@@ -8,5 +8,6 @@ tags:
   - javascript
   - css
 repoUrl: https://github.com/coloradocolby/flip-time
+deployedUrl: https://chrome.google.com/webstore/detail/flip-time/apbapccfgemhlnbckbjjdbkpbkllbbib?hl=en
 date: 2019-05-07T07:27:52.878Z
 ---
