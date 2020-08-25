@@ -73,7 +73,7 @@ export default () => {
                   <Input
                     id="name"
                     type="text"
-                    className="appearance-none block w-full bg-gray-200  border-2 border-gray-400 rounded py-3 px-4 leading-tight shadow-sm hover:shadow-md transition-shadow duration-200 focus:outline-none focus:border-gray-500"
+                    className="appearance-none border-2 border-gray-400 rounded w-full py-2 px-4 focus:outline-none focus:border-purple-600"
                     name="name"
                     placeholder="name"
                     value={name}

@@ -22351,41 +22351,6 @@ pre {
   border-radius: 50%;
 }
 
-.input {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  --bg-opacity: 1;
-  background-color: #2d3748;
-  background-color: rgba(45, 55, 72, var(--bg-opacity));
-  --border-opacity: 1;
-  border-color: #cbd5e0;
-  border-color: rgba(203, 213, 224, var(--border-opacity));
-}
-
-.input:focus{
-  --border-opacity: 1;
-  border-color: #805ad5;
-  border-color: rgba(128, 90, 213, var(--border-opacity));
-}
-
-.input{
-  border-radius: 0.25rem;
-  border-width: 2px;
-}
-
-.input:focus{
-  outline: 0;
-}
-
-.input{
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 100%;
-}
-
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
