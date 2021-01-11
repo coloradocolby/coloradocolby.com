@@ -1,7 +1,7 @@
 ---
 type: project
 title: skrrrt
-path: skrrrt
+path: /projects/flip-time
 description: a social media app for unicyclists
 tags:
   - react
