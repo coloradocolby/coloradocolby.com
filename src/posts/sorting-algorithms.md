@@ -1,12 +1,12 @@
 ---
 type: post
-path: /posts/sorting-algorithms
-date: 2020-01-26T04:40:57.521Z
 title: Sorting Algorithms
+path: /posts/sorting-algorithms
 description: All sorts of sorting algorithms
 tags:
   - sorting
   - asymptotic time
+date: 2020-01-26T04:40:57.521Z
 ---
 
 _A collection of Sorting Algorithms_
@@ -112,3 +112,5 @@ console.log('insertionsort\n', insertionSort([3, 2, 1, 5, 4, 6, 7]))
 console.log('quicksort\n', quickSort([3, 2, 1, 5, 4, 6, 7]))
 console.log('mergesort\n', mergeSort([3, 2, 1, 5, 4, 6, 7]))
 ```
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_MpUP6aKiQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
