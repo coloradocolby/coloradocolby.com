@@ -1,7 +1,7 @@
 ---
 type: post
 title: Energy Considerations in 2021
-path: /posts/why-choose-engie
+path: /posts/energy-considerations-2021
 description: Things to consider before making an energy decision in 2021
 tags:
   - "2021"
@@ -14,6 +14,8 @@ Neque nascetur malesuada ornare aliquam natoque leo ullamcorper felis semper, lo
 Laoreet dictumst malesuada massa posuere aenean platea sit mus leo himenaeos nec imperdiet, dapibus vivamus lacinia sapien pharetra volutpat primis condimentum erat enim sodales. Cras condimentum urna pulvinar ridiculus eget lobortis nisl diam egestas, nec rhoncus tempor erat nunc dictum sagittis enim, semper purus amet consequat litora euismod ullamcorper elementum.
 
 Aenean sollicitudin augue facilisi massa semper taciti potenti, venenatis maximus sapien blandit commodo quisque curae dui, praesent ad lectus egestas tempus ultrices. Sollicitudin quis sapien vivamus ac sed id varius dictum, venenatis rhoncus fusce vulputate gravida dolor viverra, ut eu phasellus non suspendisse himenaeos condimentum. Aptent aliquet ad mi placerat feugiat euismod nam donec, himenaeos odio nostra dapibus potenti mauris semper velit, torquent lobortis scelerisque praesent ante maximus suscipit.
+
+![](/img/engie-logo.png)
 
 Porta molestie feugiat scelerisque elementum libero praesent, neque pharetra euismod quam. Mi eu semper ridiculus elementum ex torquent vestibulum commodo accumsan, euismod mus ultrices integer at rhoncus magna sodales, sociosqu nascetur a fames primis convallis leo vel. Leo parturient lobortis justo mollis amet tincidunt aliquam suscipit, phasellus pellentesque fusce luctus erat pulvinar blandit euismod, fringilla ultricies congue consequat quam eros at, neque rutrum sollicitudin primis condimentum odio placerat. Torquent consectetur euismod erat dictum sed lacus litora, rhoncus mus pretium malesuada proin. Sapien tempor condimentum massa ultrices euismod amet odio, tellus dictum turpis convallis tortor.
 
