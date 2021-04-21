@@ -11,11 +11,11 @@ module.exports = {
     site: 'colby.sh',
     author: {
       name: 'colby',
-      location: 'seattle',
+      location: 'colorado',
     },
     url: 'https://colby.sh',
     image: '/img/colby.jpg',
-    description: 'a software engineer in seattle',
+    description: 'a software engineer in colorado',
     twitterUsername: '@coloradocolby',
     siteUrl: `https://colby.sh`,
   },
