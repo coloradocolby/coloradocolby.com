@@ -29,7 +29,7 @@ const PostsPage = () => {
         <ul className="flex flex-row flex-wrap">
           {data.allMarkdownRemark.edges.map(edge => {
             return (
-              <li className="md:w-1/2 w-full" key={edge.node.frontmatter.path}>
+              <li className="w-full" key={edge.node.frontmatter.path}>
                 <Link to={`${edge.node.frontmatter.path}`}>
                   <Card
                     title={edge.node.frontmatter.title}

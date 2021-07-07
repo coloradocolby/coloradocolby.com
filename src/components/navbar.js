@@ -1,6 +1,13 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import { Bookmark, Feather, GitMerge, Home, Moon, Sun } from 'react-feather'
+import {
+  HomeIcon,
+  InboxInIcon,
+  NewspaperIcon,
+  TerminalIcon,
+  SunIcon,
+  MoonIcon,
+} from '@heroicons/react/outline'
 import styled, { withTheme } from 'styled-components'
 import { useTheme } from '../contexts/theme.context'
 import { backgroundColor, textColor } from '../theme'
@@ -12,23 +19,12 @@ const Ul = styled.ul`
 `
 
 const Li = styled.li`
-  margin: 0.25em;
+  margin: 0.25em 0.35em;
   padding: 0.5em;
   transition: background 200ms ease;
   color: ${textColor};
   border-radius: 50%;
   cursor: pointer;
-
-  &:hover {
-    background: ${backgroundColor};
-  }
-
-  svg {
-    stroke-width: 2.5px;
-    width: 20px;
-    height: 20px;
-  }
-
   }
 `
 
@@ -42,19 +38,19 @@ const Navbar = ({ theme }) => {
           {[
             {
               link: '/',
-              icon: <Home />,
+              icon: <HomeIcon className="w-6 h-6" />,
             },
             {
               link: '/projects/',
-              icon: <GitMerge />,
+              icon: <TerminalIcon className="w-6 h-6" />,
             },
             {
               link: '/posts/',
-              icon: <Bookmark />,
+              icon: <NewspaperIcon className="w-6 h-6" />,
             },
             {
               link: '/contact/',
-              icon: <Feather />,
+              icon: <InboxInIcon className="w-6 h-6" />,
             },
           ].map(({ link, icon }) => (
             <Link
@@ -66,7 +62,11 @@ const Navbar = ({ theme }) => {
             </Link>
           ))}
           <Li onClick={() => toggle()}>
-            {theme.mode === 'light' ? <Moon /> : <Sun />}
+            {theme.mode === 'light' ? (
+              <MoonIcon className="w-6 h-6" />
+            ) : (
+              <SunIcon className="w-6 h-6" />
+            )}
           </Li>
         </Ul>
       </nav>
