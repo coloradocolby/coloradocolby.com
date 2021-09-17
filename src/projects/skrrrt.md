@@ -4,12 +4,12 @@ title: skrrrt
 path: /projects/flip-time
 description: a social media app for unicyclists
 tags:
-  - react
-  - nestjs
+  - nextjs
   - hasura
+  - postgres
   - graphql
   - apollo
-  - postgres
+  - mux
   - aws
 deployedUrl: https://skrrrt.io
 date: 2021-01-14T21:30:00.000Z
