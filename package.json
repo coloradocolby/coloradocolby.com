@@ -44,7 +44,7 @@
     "react-loaders": "^3.0.1",
     "styled-components": "^5.0.1",
     "styled-theming": "^2.2.0",
-    "validator": "^12.2.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.8.3",
