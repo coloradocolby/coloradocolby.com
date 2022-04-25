@@ -7,17 +7,17 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: 'colby.sh',
-    site: 'colby.sh',
+    title: 'coloradocolby.com',
+    site: 'coloradocolby.com',
     author: {
       name: 'colby',
       location: 'colorado',
     },
-    url: 'https://colby.sh',
+    url: 'https://coloradocolby.com',
     image: '/img/colby.jpg',
     description: 'a software engineer in colorado',
     twitterUsername: '@coloradocolby',
-    siteUrl: `https://colby.sh`,
+    siteUrl: `https://coloradocolby.com`,
   },
   plugins: [
     {
@@ -166,13 +166,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `colby.sh`,
-        short_name: `colby.sh`,
+        name: `coloradocolby.com`,
+        short_name: `coloradocolby.com`,
         start_url: `/`,
         background_color: `#f7f0eb`,
         theme_color: `#a2466c`,
         display: `standalone`,
-        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
+        icon: `static/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-netlify-cms`, // make sure this is last
