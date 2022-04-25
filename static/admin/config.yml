@@ -1,0 +1,52 @@
+backend:
+  name: github
+  repo: coloradocolby/coloradocolby
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: posts
+    label: Posts
+    folder: src/posts
+    create: true
+    fields:
+      - { label: Type, name: type, widget: string, default: project }
+      - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+      - { label: Tags, name: tags, widget: list }
+      - {
+          label: Featured Image,
+          name: featuredImage,
+          widget: image,
+          required: false,
+        }
+      - { label: Published Date, name: date, widget: datetime }
+
+  - name: projects
+    label: Projects
+    folder: src/projects
+    create: true
+    fields:
+      - { label: Type, name: type, widget: string, default: project }
+      - { label: Title, name: title, widget: string }
+      - { label: Path, name: path, widget: string }
+      - { label: Description, name: description, widget: string }
+      - { label: Body, name: body, widget: markdown, required: false }
+      - { label: Tags, name: tags, widget: list }
+      - { label: Repo Url, name: repoUrl, widget: string, required: false }
+      - {
+          label: Deployed Url,
+          name: deployedUrl,
+          widget: string,
+          required: false,
+        }
+      - {
+          label: Featured Image,
+          name: featuredImage,
+          widget: image,
+          required: false,
+        }
+      - { label: Published Date, name: date, widget: datetime }

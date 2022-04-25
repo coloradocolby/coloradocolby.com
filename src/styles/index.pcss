@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+
+/* https://tailwindcss.com/docs/adding-base-styles/#using-css */
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+h4 {
+  @apply text-base;
+}
+h5 {
+  @apply text-sm;
+}
+h6 {
+  @apply text-xs;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+:root {
+  --scrollbarBG: #35353b;
+  --thumbBG: #26272d;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  font-family: 'Poppins', serif;
+}
+
+pre {
+  box-shadow: 0 2px 4px rgba(10, 10, 10, 0.15);
+  border-radius: 10px;
+}
+
+.scale-on-hover {
+  transition: all 200ms ease-in-out;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.02);
+}
+
+.card {
+  background: rgba(68, 68, 68, 0.03);
+}
+
+.active-link-light li {
+  background: #edf2f7; /* should match value in theme.js */
+  border-radius: 50%;
+}
+
+.active-link-dark li {
+  background: #4a5568; /* should match value in theme.js */
+  border-radius: 50%;
+}
+
+*::placeholder {
+  @apply select-none;
+}
