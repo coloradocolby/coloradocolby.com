@@ -1,7 +1,7 @@
 ---
 type: project
 title: skrrrt
-path: /projects/flip-time
+path: /projects/skrrrt
 description: a social media app for unicyclists
 tags:
   - nextjs
